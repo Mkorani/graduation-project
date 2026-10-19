@@ -36,8 +36,8 @@ window.PROJEKTIT = [
     "tila": "kaynnissa",
     "kuvaus": "Koulun kahvilapeli Unitylla: asiakkaat tilaavat, pelaaja toimittaa, vaikeus kasvaa ja tulokset tallentuvat. Peli julkaistaan selaimessa pelattavana WebGL-versiona, jota kuka tahansa voi kokeilla.",
     "lukuvuosi": "2026–27",
-    "viikot": "vko 34–49",
-    "kesto": "14 viikkoa",
+    "viikot": "vko 43–7",
+    "kesto": "15 työviikkoa",
     "ryhma": "",
     "tekniikat": [
       "Unity",
