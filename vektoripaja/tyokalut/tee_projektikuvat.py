@@ -71,10 +71,10 @@ def workflow():
 def roadmap():
     rows = [
       ('Valmistelu','Viikot 40–41','Työkalut ja kuutioharjoitus','Opit tekemään, testaamaan ja julkaisemaan.', 'Syysloma · viikko 42'),
-      ('Piirroksesta 3D-malliksi','Viikot 43–47','Tuonti → osat → muodot → muokkaus','Sovelluksen perustoiminnot syntyvät.', ''),
-      ('Ensimmäinen toimiva versio','Viikot 48–51','Kiertopiste → vienti → tallennus → kokeilu','Asiakkaat kokeilevat koko työnkulkua.', 'Joululoma · viikot 52–1'),
-      ('Parannukset','Viikot 2–5','Korjaukset ja sovitut jatkotoiminnot','Palaute ohjaa seuraavia muutoksia.', ''),
-      ('Julkaisu ja näyttö','Viikot 6–9','Julkaisutesti → v1.0 → esittely','Toinen käyttäjä saa sovelluksen käyttöön.', 'Talviloma viikolla 8 · näyttö viikolla 9'),
+      ('Piirroksesta 3D-malliksi','Viikot 43–49','Tuonti → osat → muodot → muokkaus','Sovelluksen perustoiminnot syntyvät.', ''),
+      ('Ensimmäinen toimiva versio','Viikot 50–3','Kiertopiste → vienti → tallennus → kokeilu','Asiakkaat kokeilevat koko työnkulkua.', 'Joululoma · viikot 52–1'),
+      ('Parannukset','Viikot 4–7','Korjaukset ja sovitut jatkotoiminnot','Palaute ohjaa seuraavia muutoksia.', ''),
+      ('Julkaisu ja näyttö','Viikot 9–11','Julkaisutesti → v1.0 → esittely','Toinen käyttäjä saa sovelluksen käyttöön.', 'Talviloma viikolla 8 · näyttö viikolla 11'),
     ]
     c = text(40,49,'Mitä syntyy missäkin vaiheessa?',32,True)
     for n,(title,weeks,action,why,holiday) in enumerate(rows,1):

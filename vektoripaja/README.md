@@ -5,8 +5,14 @@ tekee Inkscapen SVG-piirroksesta 3D-mallin ja vie sen .obj-tiedostoksi. Työ teh
 Microsoft 365 Copilot auttaa suunnittelussa ja Tiedosto-kaistan toteutuksessa. GitHub Copilot
 avustaa VS Codessa. Opiskelija päättää ja tarkistaa.
 
-- Aikataulu: vk 40/2026 (ma 28.9.) – vk 9/2027 (pe 5.3.), 18 työviikkoa.
+- Aikataulu: vk 40/2026 (ma 28.9.) – vk 11/2027 (pe 19.3.), 18 sisältöviikkoa ja 20 työviikkoa.
   Lomat vk 42, joululoma 18.12.–10.1. (vk 51 on neljä työpäivää) ja talviloma vk 8.
+- **Aikataulun siirto 22.10.2026 (Matin päätös):** viikot 43 ja 45 kestävät kaksi kalenteriviikkoa
+  (`pitkatViikot: { 43: 2, 45: 2 }`, otsikkona "Viikot 43–44"). Myöhemmät sisältöviikot numeroitiin
+  kalenteriviikoiksi: entinen 44 → 45, 45–49 → 47–51, 50–51 → 2–3, 2–5 → 4–7 ja 6, 7, 9 → 9, 10, 11.
+  Katselmointi ja v0.1 siirtyivät tammikuuhun; viikolla 51 on uusi työvaihe Tallenna tilanne ennen
+  joululomaa ja viikolla 2 Tarkista ympäristö loman jälkeen. Pakollinen ydin valmistuu ennen
+  katselmointia (vk 3).
 - Peruste: Tieto- ja viestintätekniikan perustutkinto, OPH-6216-2025 (perusteId 9816282).
   Ohjelmointi (10 vaatimusta, p5 osoitetaan muulla tavalla), Ohjelmistokehittäjänä
   toimiminen (14) ja Ohjelmiston toteuttaminen ohjelmistokomponenttikirjastolla (7): 31 vaatimusta.
@@ -23,7 +29,10 @@ avustaa VS Codessa. Opiskelija päättää ja tarkistaa.
 - Moottori v2.8 (sama kuin muissa näyttöprojekteissa) opt-in-ominaisuuksin: oma teema (`teema`),
   yhtenäiset viikko-ohjeet (`yhtenaisetViikot`, staattisesti `rakenna_index.py`:llä), työsykli (`sykli`),
   viikkorutiini, "Jos et tiedä, mitä tehdä" (`josJumissa`), kuvaohjeet (`kuvakaappaukset.json`),
-  vuodenvaihde (`vuosi: [2026, 2027]`) ja lyhyt viikko 51 (`lyhyetViikot`).
+  vuodenvaihde (`vuosi: [2026, 2027]`), lyhyt viikko 51 (`lyhyetViikot`) ja kahden viikon jaksot
+  (`pitkatViikot`). v2.8.4 (vain Vektoripaja): sisällön linkit avautuvat uuteen välilehteen
+  (`linkitUuteenValilehteen`), välilehdet synkronoivat tallennetun tilan, ja työvaiheiden
+  työsykliviittaukset ovat linkkejä askeleeseen (`sykliLinkit`).
 - **Saavutettava ulkoasu:** värit, fonttikoko, kirjain-, sana- ja rivivälit,
   rivinpituus, 2 px reunat, 3 px fokus ja yksipalstaisuus tulevat `teema`-lohkosta ja jaetun
   `styles.css`:n `html[data-teema]`-säännöistä. Moottorin päivityksessä ulkoasu todennetaan
@@ -74,7 +83,7 @@ chrome --headless --no-pdf-header-footer --print-to-pdf=downloads/vektoripaja-ty
 ## Kuvaohjeiden kuvat
 
 Aloitusnäkymä kertoo tavoitteen ja viisi vaihetta. Jokaisen työviikon alussa on vaihepolku,
-yksi yhteys kokonaisprojektiin ja lyhyt tavoite. Projektin 127 työvaihetta on jaettu
+yksi yhteys kokonaisprojektiin ja lyhyt tavoite. Projektin 129 työvaihetta on jaettu
 osatehtäviin (selkeysuudistus 5.10.2026: yksi osatehtävä on yksi toimenpide, ja jokaisessa on
 Missä, Tee ja Näet nyt). Vanhat tehtävätunnukset säilyvät, ja moottori siirtää aiemmat rastit
 osatehtäviin (`versio`, `vanha`, `perii`). Viikon työvaihe on viikon sivun osa; GitHub-issue on

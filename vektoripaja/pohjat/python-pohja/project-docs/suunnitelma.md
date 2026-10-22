@@ -41,34 +41,34 @@ Vaatimukset ja niiden tärkeysjärjestys: https://mattiseise.github.io/projektik
 ### Dokumentointitapa (viikko 43)
 > Kirjoita palaverissa sovittu tapa: README ja käyttöohje. Kirjoita palaverin päivä.
 
-### Rajapinnat (viikot 44, 48 ja 49)
+### Rajapinnat (viikot 45, 50 ja 51)
 > Kirjoita jokaisesta viikon funktiosta nimi, syöte ja paluuarvo.
 
-### Valinnan toiminta (viikko 44)
+### Valinnan toiminta (viikko 45)
 > Kun käyttäjä napsauttaa osaa, valitaanko lapsi vai koko kappale? Kirjoita päätös ja peruste.
 
-### Revolven valintatapojen vertailu (viikko 44)
+### Revolven valintatapojen vertailu (viikko 45)
 > Vertaa kahta tapaa. Kirjoita kummastakin hyvät ja huonot puolet ja oma suosituksesi.
 
-### Revolven valintatapa (viikko 45)
+### Revolven valintatapa (viikko 47)
 > Kirjoita palaverissa sovittu tapa ja palaverin päivä.
 
-### Profiili akselin väärällä puolella (viikko 45)
+### Profiili akselin väärällä puolella (viikko 47)
 > Mitä tehdään, jos profiilin piste on akselin väärällä puolella? Vastaus on testin 11 odotettu tulos.
 
-### Tallennustapa (viikko 50)
+### Tallennustapa (viikko 2)
 > Vertaa tallennustapoja omilla kriteereilläsi. Kirjoita valinta, peruste ja oman tallennustiedostosi koko.
 
-### Tärkeän jatkon järjestys (viikko 2)
+### Tärkeän jatkon järjestys (viikko 4)
 > Kirjoita toiminnot järjestyksessä. Kirjoita jokaiselle tuntiarvio ja asiakkaan prioriteetti.
 
-### Osien tunnistus päivityksessä (viikko 3)
+### Osien tunnistus päivityksessä (viikko 5)
 > Tunnistetaanko osa nimellä vai tunnisteella? Kirjoita palaverissa sovittu tapa ja peruste.
 
-### Seuraava toiminto (viikko 4)
+### Seuraava toiminto (viikko 6)
 > Kirjoita, minkä tärkeän jatkon toiminnon teet ja miksi juuri sen.
 
-### Käyttöliittymävaatimuksen tarkistus (viikko 5)
+### Käyttöliittymävaatimuksen tarkistus (viikko 7)
 > Mitä viikon 43 käyttöliittymävaatimuksesta vielä puuttuu?
 
 ## C · Ohjaajan päätökset
@@ -77,17 +77,17 @@ Vaatimukset ja niiden tärkeysjärjestys: https://mattiseise.github.io/projektik
 ### Krediittien lisärahoitus (lokakuun loppuun mennessä)
 > Ohjaajan päätös ja päivä.
 
-### Pakollisen ytimen myöhästymisen ratkaisu (viikko 47)
+### Pakollisen ytimen myöhästymisen ratkaisu (viikko 49)
 > Ohjaajan päätös ja päivä. Tarvitaan vain, jos pakollinen ydin on myöhässä.
 
-### Katselmoinnin kirjaustapa (ennen viikkoa 51)
+### Katselmoinnin kirjaustapa (ennen viikkoa 3)
 > Ohjaajan päätös ja päivä.
 
-### Julkaisutestaaja (viikko 5)
+### Julkaisutestaaja (viikko 7)
 > Kirjoita vain rooli, esimerkiksi toinen opiskelija. Lähetä nimi ohjaajalle Teamsissa.
 
-### Lisenssi (ennen viikkoa 6)
+### Lisenssi (ennen viikkoa 9)
 > Ohjaajan päätös ja päivä.
 
-### Näytön ajankohta ja arvioijat (viikko 9)
+### Näytön ajankohta ja arvioijat (viikko 11)
 > Ohjaajan päätös ja päivä.

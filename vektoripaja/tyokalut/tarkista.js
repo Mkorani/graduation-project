@@ -257,12 +257,14 @@ const EN_MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep"
   }
   const w = Number(num);
   /* Vuodenvaihteen yli menevässä jaksossa viikon vuosi tiedetään sen paikasta
-     viikot-listassa. lyhyetViikot = {51: 4}: viikon viimeinen työpäivä on to. */
+     viikot-listassa. lyhyetViikot = {51: 4}: viikon viimeinen työpäivä on to.
+     pitkatViikot = {43: 2}: jakso kestää kaksi kalenteriviikkoa (ma 43 – pe 44). */
   const paivia = Number((P.lyhyetViikot || {})[w]) || 5;
+  const viikkoja = Number((P.pitkatViikot || {})[w]) || 1;
   const candidateYears = weekYear[w] ? [weekYear[w]] : years;
   const candidates = candidateYears.flatMap((y) => {
     const ma = isoMonday(y, w);
-    const pe = new Date(ma.getTime() + (paivia - 1) * 86400000);
+    const pe = new Date(ma.getTime() + ((viikkoja - 1) * 7 + paivia - 1) * 86400000);
     const sameMonth = ma.getUTCMonth() === pe.getUTCMonth();
     const fi = sameMonth
       ? `${ma.getUTCDate()}.–${pe.getUTCDate()}.${pe.getUTCMonth() + 1}.`
@@ -540,7 +542,12 @@ workWeeks.forEach((w) => {
   });
 });
 
-/* ---------- 13b. lyhyetViikot ---------- */
+/* ---------- 13b. lyhyetViikot ja pitkatViikot ---------- */
+Object.entries(P.pitkatViikot || {}).forEach(([w, n]) => {
+  if (!workWeeks.includes(Number(w))) err(`pitkatViikot: viikko ${w} ei ole työviikko`);
+  if (!(Number(n) >= 2 && Number(n) <= 4)) err(`pitkatViikot: viikon ${w} kalenteriviikkojen määrä ${n} ei ole 2–4`);
+  for (let k = 1; k < Number(n); k++) if ((P.viikot || []).map(Number).includes(Number(w) + k)) err(`pitkatViikot: viikko ${Number(w) + k} kuuluu jaksoon ${w}, joten se ei saa olla viikot-listassa`);
+});
 Object.entries(P.lyhyetViikot || {}).forEach(([w, n]) => {
   if (!workWeeks.includes(Number(w))) err(`lyhyetViikot: viikko ${w} ei ole työviikko`);
   if (!(Number(n) >= 1 && Number(n) <= 4)) err(`lyhyetViikot: viikon ${w} päivien määrä ${n} ei ole 1–4`);

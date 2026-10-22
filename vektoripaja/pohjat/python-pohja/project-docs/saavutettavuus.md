@@ -2,7 +2,7 @@
 
 > Mittaa Accessibility Insights for Windowsin FastPassilla ennen muutoksia ja niiden jälkeen.
 
-## Ennen muutoksia (viikko 5)
+## Ennen muutoksia (viikko 7)
 > Perusmittaus ennen kuin muutat sovellusta.
 
 - Päivä: 
@@ -13,7 +13,7 @@
   2. 
   3. 
 
-## Jälkeen (viikko 5)
+## Jälkeen (viikko 7)
 > Jälkimittaus samalla tavalla muutosten jälkeen.
 
 - Päivä: 
