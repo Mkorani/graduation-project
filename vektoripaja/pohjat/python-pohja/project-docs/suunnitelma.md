@@ -41,9 +41,6 @@ Vaatimukset ja niiden tärkeysjärjestys: https://mattiseise.github.io/projektik
 ### Dokumentointitapa (viikko 43)
 > Kirjoita palaverissa sovittu tapa: README ja käyttöohje. Kirjoita palaverin päivä.
 
-### Rajapinnat (viikot 45, 50 ja 51)
-> Kirjoita jokaisesta viikon funktiosta nimi, syöte ja paluuarvo.
-
 ### Valinnan toiminta (viikko 45)
 > Kun käyttäjä napsauttaa osaa, valitaanko lapsi vai koko kappale? Kirjoita päätös ja peruste.
 
@@ -56,19 +53,19 @@ Vaatimukset ja niiden tärkeysjärjestys: https://mattiseise.github.io/projektik
 ### Profiili akselin väärällä puolella (viikko 47)
 > Mitä tehdään, jos profiilin piste on akselin väärällä puolella? Vastaus on testin 11 odotettu tulos.
 
-### Tallennustapa (viikko 2)
+### Tallennustapa (viikko 3)
 > Vertaa tallennustapoja omilla kriteereilläsi. Kirjoita valinta, peruste ja oman tallennustiedostosi koko.
 
-### Tärkeän jatkon järjestys (viikko 4)
+### Tärkeän jatkon järjestys (viikko 5)
 > Kirjoita toiminnot järjestyksessä. Kirjoita jokaiselle tuntiarvio ja asiakkaan prioriteetti.
 
-### Osien tunnistus päivityksessä (viikko 5)
+### Osien tunnistus päivityksessä (viikko 6)
 > Tunnistetaanko osa nimellä vai tunnisteella? Kirjoita palaverissa sovittu tapa ja peruste.
 
-### Seuraava toiminto (viikko 6)
+### Seuraava toiminto (viikko 7)
 > Kirjoita, minkä tärkeän jatkon toiminnon teet ja miksi juuri sen.
 
-### Käyttöliittymävaatimuksen tarkistus (viikko 7)
+### Käyttöliittymävaatimuksen tarkistus (viikko 9)
 > Mitä viikon 43 käyttöliittymävaatimuksesta vielä puuttuu?
 
 ## C · Ohjaajan päätökset
@@ -80,14 +77,14 @@ Vaatimukset ja niiden tärkeysjärjestys: https://mattiseise.github.io/projektik
 ### Pakollisen ytimen myöhästymisen ratkaisu (viikko 49)
 > Ohjaajan päätös ja päivä. Tarvitaan vain, jos pakollinen ydin on myöhässä.
 
-### Katselmoinnin kirjaustapa (ennen viikkoa 3)
+### Katselmoinnin kirjaustapa (ennen viikkoa 4)
 > Ohjaajan päätös ja päivä.
 
-### Julkaisutestaaja (viikko 7)
+### Julkaisutestaaja (viikko 9)
 > Kirjoita vain rooli, esimerkiksi toinen opiskelija. Lähetä nimi ohjaajalle Teamsissa.
 
-### Lisenssi (ennen viikkoa 9)
+### Lisenssi (ennen viikkoa 10)
 > Ohjaajan päätös ja päivä.
 
-### Näytön ajankohta ja arvioijat (viikko 11)
+### Näytön ajankohta ja arvioijat (viikko 12)
 > Ohjaajan päätös ja päivä.

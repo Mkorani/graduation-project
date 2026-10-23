@@ -3,10 +3,10 @@
   "nimi": "Vektoripaja",
   "kuvaus": "Ohjattu näyttöprojekti: Windowsilla toimiva low-poly 3D-mallinnin (Python-työpöytäsovellus), joka tekee Inkscapen SVG-piirroksesta 3D-mallin ja vie sen .obj-tiedostoksi. Työ tehdään tekoälyavusteisesti: Copilot suunnittelee, GitHub Copilot toteuttaa.",
   "vuosi": [2026, 2027],
-  "viikot": [40, 41, 42, 43, 45, 47, 48, 49, 50, 51, 52, 53, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+  "viikot": [40, 41, 42, 43, 45, 47, 48, 49, 50, 51, 52, 53, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
   "pitkatViikot": { "43": 2, "45": 2 },
   "lomaViikot": [42, 52, 53, 1, 8],
-  "julkaisuviikko": 10,
+  "julkaisuviikko": 11,
   "tunnusmerkki": "◇",
   "aloitusNappi": "Aloita viikosta 40",
   "paletti": {
@@ -18,9 +18,9 @@
   "vaiheet": [
     { "tunnus": "A", "lyhyt": "Työkalut", "otsikko": "Työkalut ja harjoitussykli", "viikot": [40, 41, 42], "vari": "#1fa4e3" },
     { "tunnus": "B", "lyhyt": "MVP-ydin", "otsikko": "MVP-ydin: SVG:stä muotoja", "viikot": [43, 45, 47, 48, 49], "vari": "#1fa4e3" },
-    { "tunnus": "C", "lyhyt": "MVP valmiiksi", "otsikko": "MVP valmiiksi ja katselmointi", "viikot": [50, 51, 52, 53, 1, 2, 3], "vari": "#1fa4e3" },
-    { "tunnus": "D", "lyhyt": "Jatkokehitys", "otsikko": "Jatkokehitys katselmoinnin pohjalta", "viikot": [4, 5, 6, 7], "vari": "#1fa4e3" },
-    { "tunnus": "E", "lyhyt": "Julkaisu ja näyttö", "otsikko": "Julkaisu ja näyttö", "viikot": [8, 9, 10, 11], "vari": "#1fa4e3" }
+    { "tunnus": "C", "lyhyt": "MVP valmiiksi", "otsikko": "MVP valmiiksi ja katselmointi", "viikot": [50, 51, 52, 53, 1, 2, 3, 4], "vari": "#1fa4e3" },
+    { "tunnus": "D", "lyhyt": "Jatkokehitys", "otsikko": "Jatkokehitys katselmoinnin pohjalta", "viikot": [5, 6, 7, 8, 9], "vari": "#1fa4e3" },
+    { "tunnus": "E", "lyhyt": "Julkaisu ja näyttö", "otsikko": "Julkaisu ja näyttö", "viikot": [10, 11, 12], "vari": "#1fa4e3" }
   ],
   "kuvitukset": {
     "tunnus": "kolmio"
@@ -30,7 +30,7 @@
     "tila": "kaynnissa",
     "kuvaus": "Windowsilla toimiva työpöytäsovellus, joka tekee Inkscapella piirretystä kuvasta low-poly-mallin eli yksinkertaisen, kulmikkaan 3D-mallin: pyörähdyskappaleita, putkia ja osia, jotka liikkuvat yhdessä. Malli viedään .obj-tiedostoksi. Tekoäly kirjoittaa suuren osan koodista, mutta suunnittelu, testit ja päätökset ovat omia.",
     "ryhma": "Joustava",
-    "kesto": "20 työviikkoa",
+    "kesto": "21 työviikkoa",
     "tekniikat": ["Python", "PySide6 (Qt)", "PyVista", "trimesh", "pytest", "PyInstaller", "GitHub Actions", "GitHub Copilot", "Microsoft 365 Copilot"],
     "tutkinto": "Tieto- ja viestintätekniikan perustutkinto",
     "diaarinumero": "OPH-6216-2025",

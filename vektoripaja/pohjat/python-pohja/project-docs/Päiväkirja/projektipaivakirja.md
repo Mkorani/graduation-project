@@ -67,7 +67,7 @@
 ### Missä työnäyte on?
 
 ## Vko 50 – Kiertopisteen säätäminen (pivot) (7.–11.12.2026)
-> Kirjaa: Pivotin syötteen tarkistus selityspohjalla ja testien 16–18 tulokset. Työnäytteet: suunnitelma.md-commitin tunnus (tarkistuksen rajapinta), tarkistuksen kortin issuen numero ja sen Sovittu viikkopalaverissa -kommentin osoite (Kopioi osoite, issuen numero tai commitin tunnus, kohta Issuen kommentin osoite), pivotin ja kenttien korttien issuenumerot ja releasen v0.0.50 osoite. Kirjoita kohtaan Missä työnäyte on? nämä näyttömatriisin vaatimukset: testaa ohjelman toimintoja; käyttää rakenteista ohjelmointia toteutuksissa; tulkitsee suunnitelmia ja toteuttaa käyttöliittymän tai sen osia; sopii tehtävistä tiimin muiden jäsenten kanssa; jakaa kehitystiimin kanssa toteutettavat toiminnot tehtäviksi; kehittää ohjelmiston toimintalogiikkaa; käyttää versionhallintaa; julkaisee ohjelman tuotantoympäristöön; käyttää ohjelmistokomponenttikirjaston tärkeimpiä toimintoja ja työkaluja; suunnittelee, toteuttaa ja testaa ohjelmiston ohjelmistokomponenttikirjastoa käyttäen.
+> Kirjaa: Pivotin syötteen tarkistus selityspohjalla ja testien 16–18 tulokset. Työnäytteet: rajapintatiedoston Pivotin_tarkistus.md commitin tunnus, tarkistuksen kortin issuen numero ja sen Sovittu viikkopalaverissa -kommentin osoite (Kopioi osoite, issuen numero tai commitin tunnus, kohta Issuen kommentin osoite), pivotin ja kenttien korttien issuenumerot ja releasen v0.0.50 osoite. Kirjoita kohtaan Missä työnäyte on? nämä näyttömatriisin vaatimukset: testaa ohjelman toimintoja; käyttää rakenteista ohjelmointia toteutuksissa; tulkitsee suunnitelmia ja toteuttaa käyttöliittymän tai sen osia; sopii tehtävistä tiimin muiden jäsenten kanssa; jakaa kehitystiimin kanssa toteutettavat toiminnot tehtäviksi; kehittää ohjelmiston toimintalogiikkaa; käyttää versionhallintaa; julkaisee ohjelman tuotantoympäristöön; käyttää ohjelmistokomponenttikirjaston tärkeimpiä toimintoja ja työkaluja; suunnittelee, toteuttaa ja testaa ohjelmiston ohjelmistokomponenttikirjastoa käyttäen.
 
 ### Mitä tein ja miten?
 
@@ -75,8 +75,8 @@
 
 ### Missä työnäyte on?
 
-## Vko 51 – Mallin vienti Blenderiin (OBJ) (14.–17.12.2026)
-> Kirjaa: Objektijako selityspohjalla, viennin kortin issuen numero ja testit 19–20, havaintoissuen numero ja sen virheenkorjausketju 1, regressiotestin nimi, kuva project-docs/kuvat/obj-blenderissa.png, releasen v0.0.51 osoite ja näyttömatriisin vaatimukset (rivien nimet): etsii ja korjaa virheitä ohjelmakoodista; testaa ohjelman toimintoja; käyttää rakenteista ohjelmointia toteutuksissa; sopii tehtävistä tiimin muiden jäsenten kanssa; jakaa kehitystiimin kanssa toteutettavat toiminnot tehtäviksi; hyödyntää rajapintoja ja käsittelee tietoa; käyttää versionhallintaa; julkaisee ohjelman tuotantoympäristöön; suunnittelee, toteuttaa ja testaa ohjelmiston ohjelmistokomponenttikirjastoa käyttäen. Viikon viimeinen työpäivä on torstai 17.12.: kirjoita kirjaus silloin.
+## Vko 51 – Viennin aloitus ennen joululomaa (14.–17.12.2026)
+> Kirjaa: Objektijaon rajapinta tiedostossa project-docs/Rajapinnat/Objektijako.md, testien 19 ja 20 odotetut tulokset, viennin kortin issuen numero, valitun havaintoissuen numero tai pyydetty vikatehtävä, tilatiedoston Seuraavana-rivit ja näyttömatriisin vaatimukset (rivien nimet): sopii tehtävistä tiimin muiden jäsenten kanssa; jakaa kehitystiimin kanssa toteutettavat toiminnot tehtäviksi; hyödyntää rajapintoja ja käsittelee tietoa; käyttää versionhallintaa. Viikon viimeinen työpäivä on torstai 17.12.: kirjoita kirjaus silloin.
 
 ### Mitä tein ja miten?
 
@@ -84,8 +84,8 @@
 
 ### Missä työnäyte on?
 
-## Vko 2 – Tallennus ja ensimmäinen toimiva versio (11.–15.1.2027)
-> Kirjaa: Ympäristön tarkistuksen ja testiajon tulokset loman jälkeen, avausfunktio selityspohjalla, tallennustavan valinta perusteluineen, oman mallisi tallennustiedoston koko, tallennuksen kortin issuen numero ja testit 21–22, tietoturva-arvion tärkein uhka eli se, jonka seuraus käyttäjälle olisi vakavin, ja sen peruste, releasen v0.1 osoite, käynnistyskokeilun issuen numero ja näyttömatriisin vaatimukset (rivien nimet): testaa ohjelman toimintoja; sopii tehtävistä tiimin muiden jäsenten kanssa; jakaa kehitystiimin kanssa toteutettavat toiminnot tehtäviksi; valitsee ohjelmistoon sopivan tietovaraston; toteuttaa yhteyden tietovarastoon; hyödyntää rajapintoja ja käsittelee tietoa; arvioi ohjelmiston tietoturvaa; käyttää versionhallintaa; julkaisee ohjelman tuotantoympäristöön; suunnittelee, toteuttaa ja testaa ohjelmiston ohjelmistokomponenttikirjastoa käyttäen; julkaisee ohjelmiston asiakkaan ympäristöön.
+## Vko 2 – Mallin vienti Blenderiin (OBJ) (11.–15.1.2027)
+> Kirjaa: Ympäristön tarkistuksen ja testiajon tulokset loman jälkeen, objektijako selityspohjalla, viennin kortin issuen numero ja testit 19–20, havaintoissuen numero ja sen virheenkorjausketju 1, regressiotestin nimi, kuva project-docs/kuvat/obj-blenderissa.png, releasen v0.0.51 osoite ja näyttömatriisin vaatimukset (rivien nimet): etsii ja korjaa virheitä ohjelmakoodista; testaa ohjelman toimintoja; käyttää rakenteista ohjelmointia toteutuksissa; sopii tehtävistä tiimin muiden jäsenten kanssa; jakaa kehitystiimin kanssa toteutettavat toiminnot tehtäviksi; hyödyntää rajapintoja ja käsittelee tietoa; käyttää versionhallintaa; julkaisee ohjelman tuotantoympäristöön; suunnittelee, toteuttaa ja testaa ohjelmiston ohjelmistokomponenttikirjastoa käyttäen.
 
 ### Mitä tein ja miten?
 
@@ -93,7 +93,16 @@
 
 ### Missä työnäyte on?
 
-## Vko 3 – Asiakkaat kokeilevat ensimmäistä versiota (18.–22.1.2027)
+## Vko 3 – Tallennus ja ensimmäinen toimiva versio (18.–22.1.2027)
+> Kirjaa: Avausfunktio selityspohjalla, tallennustavan valinta perusteluineen, oman mallisi tallennustiedoston koko, tallennuksen kortin issuen numero ja testit 21–22, tietoturva-arvion tärkein uhka eli se, jonka seuraus käyttäjälle olisi vakavin, ja sen peruste, releasen v0.1 osoite, käynnistyskokeilun issuen numero ja näyttömatriisin vaatimukset (rivien nimet): testaa ohjelman toimintoja; sopii tehtävistä tiimin muiden jäsenten kanssa; jakaa kehitystiimin kanssa toteutettavat toiminnot tehtäviksi; valitsee ohjelmistoon sopivan tietovaraston; toteuttaa yhteyden tietovarastoon; hyödyntää rajapintoja ja käsittelee tietoa; arvioi ohjelmiston tietoturvaa; käyttää versionhallintaa; julkaisee ohjelman tuotantoympäristöön; suunnittelee, toteuttaa ja testaa ohjelmiston ohjelmistokomponenttikirjastoa käyttäen; julkaisee ohjelmiston asiakkaan ympäristöön.
+
+### Mitä tein ja miten?
+
+### Miksi tein näin?
+
+### Missä työnäyte on?
+
+## Vko 4 – Asiakkaat kokeilevat ensimmäistä versiota (25.–29.1.2027)
 > Kirjaa: Asiakkaiden tärkein havainto eli prioriteetin 1 muutostoive tiivistettynä, oma tulkintasi erikseen, katselmoinnin havaintoissueiden numerot, issue, jossa on kommentti Sovittu viikkopalaverissa, tilatiedoston Seuraavana-kohdan issue ja näyttömatriisin vaatimukset (rivien nimet): sopii tehtävistä tiimin muiden jäsenten kanssa; arvioi ratkaisujen toimivuuden yhdessä tiimin kanssa; viestii tekniset asiat asiakaslähtöisesti; osallistuu version katselmointiin; asettaa kehitystiimin kanssa toteutettavat toiminnot tärkeysjärjestykseen. Kirjoita kirjaus perjantaina.
 
 ### Mitä tein ja miten?
@@ -102,7 +111,7 @@
 
 ### Missä työnäyte on?
 
-## Vko 4 – Parannusten järjestys ja ensimmäinen korjaus (25.–29.1.2027)
+## Vko 5 – Parannusten järjestys ja ensimmäinen korjaus (1.–5.2.2027)
 > Kirjaa: Ympäristön tarkistuksen ja testiajon tulokset, krediittien lähtötilanne, tärkeän jatkon järjestys tuntiarvioineen (suunnitelmassa ja issueissa), palaverin arvio pakollisen ytimen eli MVP:n ratkaisuista, korjauksen kortin issuen numero ja sana Sovittu-kommentti sekä korjauksen commitin tunnus. Kirjoita kohtaan Missä työnäyte on? nämä näyttömatriisin vaatimukset: käyttää ohjelmointieditoria tai kehitysympäristöä, sopii tehtävistä tiimin muiden jäsenten kanssa, arvioi ratkaisujen toimivuuden yhdessä tiimin kanssa, asettaa kehitystiimin kanssa toteutettavat toiminnot tärkeysjärjestykseen, jakaa kehitystiimin kanssa toteutettavat toiminnot tehtäviksi sekä suunnittelee ja arvioi kehitystiimin kanssa tehtävien toteuttamista.
 
 ### Mitä tein ja miten?
@@ -111,7 +120,7 @@
 
 ### Missä työnäyte on?
 
-## Vko 5 – Muokatun piirroksen päivittäminen (1.–5.2.2027)
+## Vko 6 – Muokatun piirroksen päivittäminen (8.–12.2.2027)
 > Kirjaa: Tunnistustapa ja sen perustelu, kortin issuen numero ja sana Sovittu-kommentti, testin 23 tulos, pull requestin linkki ja päivityksen tunnistusfunktio selityspohjalla. Kirjoita kohtaan Missä työnäyte on? nämä näyttömatriisin vaatimukset: testaa ohjelman toimintoja, sopii tehtävistä tiimin muiden jäsenten kanssa, etsii ratkaisuvaihtoehtoja ja ratkoo ongelmia yhdessä tiimin kanssa, jakaa kehitystiimin kanssa toteutettavat toiminnot tehtäviksi, kehittää ohjelmiston toimintalogiikkaa sekä liittää ohjelman osan olemassa olevaan versioon.
 
 ### Mitä tein ja miten?
@@ -120,7 +129,7 @@
 
 ### Missä työnäyte on?
 
-## Vko 6 – Puutteet ja sovitut parannukset (8.–12.2.2027)
+## Vko 7 – Puutteet ja sovitut parannukset (15.–19.2.2027)
 > Kirjaa: Mitä teit ja miksi juuri sen, kortin issuen numero ja sana Sovittu-kommentti, kortin testin tulos (testi 24 tai rästin testi), pull requestin linkki, jos teit haaran, sekä virheenkorjausketju 2. Kirjoita kohtaan Missä työnäyte on? nämä näyttömatriisin vaatimukset: etsii ja korjaa virheitä ohjelmakoodista, testaa ohjelman toimintoja, sopii tehtävistä tiimin muiden jäsenten kanssa sekä jakaa kehitystiimin kanssa toteutettavat toiminnot tehtäviksi.
 
 ### Mitä tein ja miten?
@@ -129,7 +138,7 @@
 
 ### Missä työnäyte on?
 
-## Vko 7 – Selkeät säätimet ja näppäimistökäyttö (15.–19.2.2027)
+## Vko 9 – Selkeät säätimet ja näppäimistökäyttö (1.–5.3.2027)
 > Kirjaa: FastPassin tulokset ennen ja jälkeen, testit 25–26, kortin issuen kommentti Sovittu viikkopalaverissa ja näyttömatriisin vaatimukset: testaa ohjelman toimintoja, tulkitsee suunnitelmia ja toteuttaa käyttöliittymän tai sen osia sekä sopii tehtävistä tiimin muiden jäsenten kanssa.
 
 ### Mitä tein ja miten?
@@ -138,7 +147,7 @@
 
 ### Missä työnäyte on?
 
-## Vko 9 – Julkaisun kokeilu toisella koneella (1.–5.3.2027)
+## Vko 10 – Julkaisun kokeilu toisella koneella (8.–12.3.2027)
 > Kirjaa: Julkaisutestin tärkein epäröintikohta roolilla kirjattuna, ohjeeseen tehty korjaus, tagi v1.0-rc1, issuen kommentti Sovittu viikkopalaverissa ja näyttömatriisin vaatimukset: dokumentoi ohjelmiston sovitulla tavalla, viestii tekniset asiat asiakaslähtöisesti, julkaisee ohjelman tuotantoympäristöön, käyttää versionhallintaa ja sopii tehtävistä tiimin muiden jäsenten kanssa.
 
 ### Mitä tein ja miten?
@@ -147,7 +156,7 @@
 
 ### Missä työnäyte on?
 
-## Vko 10 – Valmis sovellus v1.0 (8.–12.3.2027)
+## Vko 11 – Valmis sovellus v1.0 (15.–19.3.2027)
 > Kirjaa: Virheenkorjausketju 3, asiakkaiden vahvistus, korjauskortin issuen kommentti Sovittu viikkopalaverissa ja näyttömatriisin vaatimukset: etsii ja korjaa virheitä ohjelmakoodista, käyttää versionhallintaa, julkaisee ohjelman tuotantoympäristöön, julkaisee ohjelmiston asiakkaan ympäristöön ja sopii tehtävistä tiimin muiden jäsenten kanssa.
 
 ### Mitä tein ja miten?
@@ -156,8 +165,8 @@
 
 ### Missä työnäyte on?
 
-## Vko 11 – Projektin esittely ja luovutus (15.–19.3.2027)
-> Kirjaa: Repositoryn osoite ja aineiston linkit, demon viisi osaa ja niihin valitut työnäytteet (funktio, havaintoissue ja kortin issue), demon kesto ja harjoittelun havainto, itsearvioinnin kolmen tilanteen päivät ja issue-numerot, itsearvioinnin lähetyspäivä, lause luovutetaan tänään 19.3.2027 sekä näyttömatriisin vaatimus: arvioi omaa toimintaa tiimin jäsenenä.
+## Vko 12 – Projektin esittely ja luovutus (22.–26.3.2027)
+> Kirjaa: Repositoryn osoite ja aineiston linkit, demon viisi osaa ja niihin valitut työnäytteet (funktio, havaintoissue ja kortin issue), demon kesto ja harjoittelun havainto, itsearvioinnin kolmen tilanteen päivät ja issue-numerot, itsearvioinnin lähetyspäivä, lause luovutetaan tänään 26.3.2027 sekä näyttömatriisin vaatimus: arvioi omaa toimintaa tiimin jäsenenä.
 
 ### Mitä tein ja miten?
 

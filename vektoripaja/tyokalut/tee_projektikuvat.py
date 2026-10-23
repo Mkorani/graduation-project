@@ -72,9 +72,9 @@ def roadmap():
     rows = [
       ('Valmistelu','Viikot 40–41','Työkalut ja kuutioharjoitus','Opit tekemään, testaamaan ja julkaisemaan.', 'Syysloma · viikko 42'),
       ('Piirroksesta 3D-malliksi','Viikot 43–49','Tuonti → osat → muodot → muokkaus','Sovelluksen perustoiminnot syntyvät.', ''),
-      ('Ensimmäinen toimiva versio','Viikot 50–3','Kiertopiste → vienti → tallennus → kokeilu','Asiakkaat kokeilevat koko työnkulkua.', 'Joululoma · viikot 52–1'),
-      ('Parannukset','Viikot 4–7','Korjaukset ja sovitut jatkotoiminnot','Palaute ohjaa seuraavia muutoksia.', ''),
-      ('Julkaisu ja näyttö','Viikot 9–11','Julkaisutesti → v1.0 → esittely','Toinen käyttäjä saa sovelluksen käyttöön.', 'Talviloma viikolla 8 · näyttö viikolla 11'),
+      ('Ensimmäinen toimiva versio','Viikot 50–4','Kiertopiste → vienti → tallennus → kokeilu','Asiakkaat kokeilevat koko työnkulkua.', 'Joululoma · viikot 52–1'),
+      ('Parannukset','Viikot 5–9','Korjaukset ja sovitut jatkotoiminnot','Palaute ohjaa seuraavia muutoksia.', 'Talviloma · viikko 8'),
+      ('Julkaisu ja näyttö','Viikot 10–12','Julkaisutesti → v1.0 → esittely','Toinen käyttäjä saa sovelluksen käyttöön.', 'Näyttö viikolla 12'),
     ]
     c = text(40,49,'Mitä syntyy missäkin vaiheessa?',32,True)
     for n,(title,weeks,action,why,holiday) in enumerate(rows,1):
@@ -90,7 +90,7 @@ def roadmap():
         c += text(112,y+105,why,24)
         if holiday: c += text(112,y+135,holiday,21)
     return svg(880,940,'Vektoripajan viisi vaihetta',
-      'Valmistelu viikoilla 40–41, 3D-mallin rakentaminen 43–47, ensimmäinen toimiva versio 48–51, parannukset 2–5 ja julkaisu sekä näyttö 6–9. Syysloma 42, joululoma 52–1 ja talviloma 8 ovat taukoja.',c)
+      'Valmistelu viikoilla 40–41, 3D-mallin rakentaminen 43–49, ensimmäinen toimiva versio 50–4, parannukset 5–9 ja julkaisu sekä näyttö 10–12. Syysloma 42, joululoma 52–1 ja talviloma 8 ovat taukoja.',c)
 
 if __name__ == '__main__':
     OUT.mkdir(exist_ok=True)

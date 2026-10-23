@@ -14,7 +14,7 @@
  *
  * v2.4: vuodenvaihde (viikot [40, …, 53, 1, …, 9] kun vuosi on [2026, 2027]),
  * lyhyetViikot (esim. {51: 4} → data-week-label ma–to), dokumentoidut
- * mitoituspoikkeamat (poikkeamat.vaiheita = "perustelu" → INFO, ei HUOM),
+ * mitoituspoikkeamat (poikkeamat.vaiheita ja poikkeamat.kesto = "perustelu" → INFO, ei HUOM/VIRHE),
  * sekä opt-in-ominaisuuksien tarkistukset: teema (14), sykli (15), kuvaohjeet (16).
  *
  * v2.5: pilkottu tehtävänanto. Tehtäväkorttien rakenne ja mekaaniset selkeyssäännöt (4b)
@@ -84,7 +84,9 @@ const weekYear = {};
 }
 if (new Set(weeks).size !== weeks.length) err("sisalto.js: sama viikkonumero toistuu viikot-listassa");
 if (workWeeks.length < 3 || workWeeks.length > 18) {
-  err(`${workWeeks.length} työviikkoa — runko on mitoitettu 3–18 viikolle`);
+  /* Tietoinen poikkeama (poikkeamat.kesto = "perustelu") → INFO. */
+  const syy = P.poikkeamat && P.poikkeamat.kesto;
+  (syy ? info : err)(`${workWeeks.length} työviikkoa — runko on mitoitettu 3–18 viikolle${syy ? ` (tietoinen poikkeama: ${syy})` : ""}`);
 }
 
 /* Keston mukainen mitoitus, ks. references/pedagoginen-runko.md § Kesto.
@@ -936,9 +938,9 @@ if (linksOn) {
 
     /* project-docs-tiedostoilla tiedostokortti */
     const polut = Object.values(cards).map((c) => String(c.polku || ""));
-    const katettu = (p) => polut.some((q) => q === p || (q.endsWith("/") && (p.startsWith(q) || `${p}/` === q)));
+    const katettu = (p) => polut.some((q) => q === p || q.startsWith(`${p.replace(/\/$/, "")}/`) || (q.endsWith("/") && (p.startsWith(q) || `${p}/` === q)));
     const mainitut = new Set();
-    [...items.map((it) => it.teksti), htmlNoComments].forEach((s) => (String(s).match(/project-docs\/(?:[\w-]+\/)*[\w-]+(?:\.\w+)?\/?/g) || []).forEach((m) => mainitut.add(m)));
+    [...items.map((it) => it.teksti), htmlNoComments].forEach((s) => (String(s).match(/project-docs\/(?:[\wÅÄÖåäö-]+\/)*[\wÅÄÖåäö-]+(?:\.\w+)?\/?/g) || []).forEach((m) => mainitut.add(m)));
     [...mainitut].filter((m) => !/^project-docs\/?$/.test(m)).forEach((m) => { if (!katettu(m)) { err(`${m}: project-docs-tiedostolta puuttuu tiedostokortti`); tiukat++; } });
     selkeysRaportti = ` · selkeys tiukka: ${items.length} tekstiä, ${linkCount} linkkiä, ${tiukat} virhettä`;
   } else {

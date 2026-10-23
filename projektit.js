@@ -361,8 +361,8 @@ window.PROJEKTIT = [
     "kieli": "",
     "kuvaus": "Windowsilla toimiva työpöytäsovellus, joka tekee Inkscapella piirretystä kuvasta low-poly-mallin eli yksinkertaisen, kulmikkaan 3D-mallin: pyörähdyskappaleita, putkia ja osia, jotka liikkuvat yhdessä. Malli viedään .obj-tiedostoksi. Tekoäly kirjoittaa suuren osan koodista, mutta suunnittelu, testit ja päätökset ovat omia.",
     "lukuvuosi": "2026–27",
-    "viikot": "vko 40–11",
-    "kesto": "20 työviikkoa",
+    "viikot": "vko 40–12",
+    "kesto": "21 työviikkoa",
     "ryhma": "Joustava",
     "tekniikat": [
       "Python",

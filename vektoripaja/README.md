@@ -5,7 +5,7 @@ tekee Inkscapen SVG-piirroksesta 3D-mallin ja vie sen .obj-tiedostoksi. Työ teh
 Microsoft 365 Copilot auttaa suunnittelussa ja Tiedosto-kaistan toteutuksessa. GitHub Copilot
 avustaa VS Codessa. Opiskelija päättää ja tarkistaa.
 
-- Aikataulu: vk 40/2026 (ma 28.9.) – vk 11/2027 (pe 19.3.), 18 sisältöviikkoa ja 20 työviikkoa.
+- Aikataulu: vk 40/2026 (ma 28.9.) – vk 12/2027 (pe 26.3.), 19 sisältöviikkoa ja 21 työviikkoa.
   Lomat vk 42, joululoma 18.12.–10.1. (vk 51 on neljä työpäivää) ja talviloma vk 8.
 - **Aikataulun siirto 22.10.2026 (Matin päätös):** viikot 43 ja 45 kestävät kaksi kalenteriviikkoa
   (`pitkatViikot: { 43: 2, 45: 2 }`, otsikkona "Viikot 43–44"). Myöhemmät sisältöviikot numeroitiin
@@ -13,6 +13,16 @@ avustaa VS Codessa. Opiskelija päättää ja tarkistaa.
   Katselmointi ja v0.1 siirtyivät tammikuuhun; viikolla 51 on uusi työvaihe Tallenna tilanne ennen
   joululomaa ja viikolla 2 Tarkista ympäristö loman jälkeen. Pakollinen ydin valmistuu ennen
   katselmointia (vk 3).
+- **Toinen siirto 23.10.2026 (Matin päätös):** viikko 51 jaettiin kahtia. Viikolla 51 (neljä
+  työpäivää) on viennin alustus ja kevyt aloitus: korjattavan virheen valinta, objektijaon rajapinta,
+  testien 19–20 odotetut tulokset ja kortti issueksi. Uusi viikko 2 on kertaus ja toteutukset:
+  ympäristö loman jälkeen, suunnitelman kertaus, .obj-vienti, tarkistus Blenderissä,
+  virheenkorjausketju 1 ja v0.0.51. Myöhemmät viikot siirtyivät viikolla (2–6 → 3–7, 7 → 9 ja
+  9–11 → 10–12): tallennus ja v0.1 vk 3, katselmointi vk 4 ja näyttö vk 12.
+- **Opiskelijan kansiomalli 23.10.2026:** AI-loki ja päiväkirja ovat omissa kansioissaan
+  (`project-docs/AI-loki/`, `project-docs/Päiväkirja/`), testiaineiston kansio on `Testiaineisto`, ja
+  jokaisen funktion rajapinta on oma tiedostonsa kansiossa `project-docs/Rajapinnat/` (rivit Nimi,
+  Syöte, Paluuarvo, Virhe ja Tiedosto). Suunnitelmapohjasta poistui otsikko Rajapinnat.
 - Peruste: Tieto- ja viestintätekniikan perustutkinto, OPH-6216-2025 (perusteId 9816282).
   Ohjelmointi (10 vaatimusta, p5 osoitetaan muulla tavalla), Ohjelmistokehittäjänä
   toimiminen (14) ja Ohjelmiston toteuttaminen ohjelmistokomponenttikirjastolla (7): 31 vaatimusta.
@@ -53,7 +63,7 @@ Sivusto on staattinen ja julkaistaan koontisivun repositoryn mukana GitHub Pages
 | `sisalto.js` | viikkojen ohjeet, työsykli, sanasto, suunnitelmapohja ja opettaja-aineisto |
 | `kuvakaappaukset.json` | kuvaohjeiden lähde: mitä kuvataan, alt-tekstit ja numeroidut kohdat. `rakenna_index.py` tekee siitä myös **generoidun** `kuvakaappaukset.js`:n, jotta kuvaohjeet toimivat ilman erillistä hakua (myös tiedostona avattuna) |
 | `pohjat/` | opiskelijan repositoryn pohjatiedostot: `PROJEKTIN-TILA.md`, `tehtavakortti.md`, `copilot-instructions.md` ja `havainto.md` (tulevat repositoryyn ohjaajan pull requestilla) |
-| `pohjat/python-pohja/project-docs/` | **generoitu** (`tyokalut/tee_pohjat.js` tiedostokorteista): dokumenttipohjat suunnitelma, projektipäiväkirja (työviikot päivämäärineen), AI-loki, kysymykset, kirjastot, tietoturva, katselmointi, julkaisutesti, saavutettavuus ja `kuvat/` |
+| `pohjat/python-pohja/project-docs/` | **generoitu** (`tyokalut/tee_pohjat.js` tiedostokorteista): dokumenttipohjat suunnitelma, `Päiväkirja/projektipaivakirja.md` (työviikot päivämäärineen), `AI-loki/ai-loki.md`, kysymykset, kirjastot, tietoturva, katselmointi, julkaisutesti, saavutettavuus, `kuvat/` ja `Rajapinnat/` |
 | `pohjat/python-pohja/` | viikon 41 valmis kuutiosovellus ja testi: julkaisu (`release.yml`, `vektoripaja.spec`, `rakenna_exe.bat`), itsetesti, teema, `requirements.txt` ja `tarkista_ymparisto.py`; pakataan tiedostoksi `pohjat/vektoripaja-pohja.zip` |
 | `app.js` | geneerinen moottori — **ei muokata projektikohtaisesti** |
 | `styles.css` | ulkoasu; projektikohtaista vain `:root`-lohkon paletti |
