@@ -4,10 +4,10 @@
   "nimi": "Vektoripaja",
   "kieli": "fi",
   "paivaton": false,
-  "generoitu": "2026-10-23",
+  "generoitu": "2026-10-27",
   "lahde": {
-    "sisalto.js": "ad583ea6606accc9",
-    "index.html": "a2d98b7f8dd8c80c"
+    "sisalto.js": "5c70024e268b75f2",
+    "index.html": "1b5d00b130079afd"
   },
   "viikot": [
     40,
@@ -1097,7 +1097,7 @@
         {
           "id": "43-10",
           "teksti": "Kirjaa asiakkaiden vastaukset",
-          "valmis": "Asiakkaiden vastaukset ovat tiedostossa project-docs/kysymykset.md GitHubissa.",
+          "valmis": "Asiakkaiden vastaukset ovat tiedostossa project-docs/kysymykset.md GitHubissa. Kun avoin asia sovitaan, päivität Vastaus-rivin ja teet commitin uudelleen.",
           "tallenna": "Vastaukset tiedostossa project-docs/kysymykset.md GitHubissa."
         },
         {
@@ -1107,40 +1107,64 @@
           "tallenna": "Vaatimus tiedostossa project-docs/suunnitelma.md GitHubissa."
         },
         {
+          "id": "43-15",
+          "teksti": "Sovi dokumentointitapa",
+          "valmis": "Sovittu dokumentointitapa ja sopimispäivä ovat project-docs/suunnitelma.md GitHubissa.",
+          "tallenna": "Dokumentointitapa tiedostossa project-docs/suunnitelma.md GitHubissa."
+        },
+        {
           "id": "43-1",
           "teksti": "Piirrä tuonnin testiaineisto",
-          "valmis": "Piirroksessa on layer Vartalo, sen sisällä sisäkkäiset ryhmät Pää ja Korvat sekä kolme polkua.",
-          "tallenna": "Piirros on auki Inkscapessa. Älä sulje Inkscapea: tallennat piirroksen työvaiheessa Tallenna tuonnin testiaineisto."
+          "valmis": "Tiedostossa Testiaineisto/oma-piirros.svg on layer Vartalo, sen sisällä sisäkkäiset ryhmät Pää ja Korvat sekä kolme polkua, ja tiedosto on tallennettu.",
+          "tallenna": "Tiedosto Testiaineisto/oma-piirros.svg omalla koneellasi. Se menee GitHubiin seuraavan työvaiheen commitissa."
         },
         {
           "id": "43-7",
-          "teksti": "Tallenna tuonnin testiaineisto",
-          "valmis": "Kansiossa testiaineisto ovat oma-piirros.svg, haitallinen.svg ja ei-svg.txt, ja ne ovat GitHubissa.",
+          "teksti": "Tee testien 4 ja 5 tiedostot",
+          "valmis": "Kansiossa Testiaineisto ovat oma-piirros.svg, haitallinen.svg ja ei-svg.txt, ja ne ovat GitHubissa.",
           "tallenna": "Tiedostot Testiaineisto/oma-piirros.svg, Testiaineisto/haitallinen.svg ja Testiaineisto/ei-svg.txt repositoryssa GitHubissa."
         },
         {
           "id": "43-2",
           "teksti": "Määrittele tuonnin rajapinta ja testit",
-          "valmis": "Tuontifunktion rajapinta sekä testien 3–5 syötteet ja odotetut tulokset on päätetty ennen toteutusta, ja havaintopohja on repositoryssa.",
-          "tallenna": "Rajapinta ja odotetut tulokset paperilla. Kirjoitat ne tuonnin korttiin ja testeihin työvaiheessa Rakenna SVG-tuonti. Havaintopohja havainto.md on jo GitHubissa."
+          "valmis": "Tuontifunktion rajapinta ja testien 3–5 odotetut tulokset ovat tiedostossa project-docs/Rajapinnat/ GitHubissa.",
+          "tallenna": "Rajapinta ja odotetut tulokset tiedostossa project-docs/Rajapinnat/SVG_tuontifunktio.md GitHubissa. Käytät niitä työvaiheissa Suunnittele tuonnin kortti ja Kirjoita tuonnin testit."
         },
         {
           "id": "43-3",
           "teksti": "Suunnittele sovelluksen rakenne",
-          "valmis": "Kansiorakenne, moduulien vastuut ja sovittu dokumentointitapa ovat GitHubissa.",
-          "tallenna": "Päätökset tiedostossa project-docs/suunnitelma.md ja rakenne tiedostossa .github/copilot-instructions.md GitHubissa."
+          "valmis": "Kansiorakenne ja moduulien vastuut ovat project-docs/suunnitelma.md ja GitHub Copilotin ohjeissa GitHubissa.",
+          "tallenna": "Rakenne tiedostoissa project-docs/suunnitelma.md ja .github/copilot-instructions.md GitHubissa."
         },
         {
           "id": "43-4",
-          "teksti": "Rakenna SVG-tuonti",
-          "valmis": "Testit 3–5 on kirjoitettu ennen toteutusta, ja oman SVG:n polut näkyvät sovelluksessa. Issuessa on rastit 1–3b.",
-          "tallenna": "Testit tiedostossa tests/test_tuonti.py ja tuonnin koodi. Ne menevät GitHubiin työvaiheessa Tarkista ja kirjaa SVG-tuonti."
+          "teksti": "Suunnittele tuonnin kortti",
+          "valmis": "Tuonnin kortti on GitHubissa issuena, sen rivit 1 ja 2 on rastitettu, ja issuessa on Sovittu viikkopalaverissa -kommentti.",
+          "tallenna": "Tuonnin kortti issuena GitHubissa. Issuen numero on issuen otsikon perässä: löydät issuen myöhemmin avoimissa tehtäväkorteissa."
+        },
+        {
+          "id": "43-13",
+          "teksti": "Kirjoita tuonnin testit",
+          "valmis": "Testit 3–5 ovat tiedostossa tests/test_tuonti.py sinun odotetuilla tuloksillasi, ja issuen rivi 3a on rastitettu.",
+          "tallenna": "Testit tiedostossa tests/test_tuonti.py omalla koneellasi. Ne menevät GitHubiin työvaiheessa Raportoi ja kirjaa tuonnin kortti."
+        },
+        {
+          "id": "43-14",
+          "teksti": "Toteuta tuonti Copilotin avulla",
+          "valmis": "Oman SVG:n polut näkyvät sovelluksessa, tiedostot tuonti.py ja ikkuna.py on tallennettu, ja issuen rivi 3b on rastitettu.",
+          "tallenna": "Tiedostot vektoripaja/tuonti.py ja vektoripaja/ikkuna.py omalla koneellasi. Ne menevät GitHubiin työvaiheessa Raportoi ja kirjaa tuonnin kortti."
         },
         {
           "id": "43-8",
-          "teksti": "Tarkista ja kirjaa SVG-tuonti",
-          "valmis": "Testit 3–5 menevät läpi, testien ja tarkistuksen tulokset ovat issuessa, ja tuonnin kortin issue on suljettu.",
-          "tallenna": "Tuonnin koodi ja testit GitHubiin. Testien 3–5 tulokset ja tarkistuksen kommentti tuonnin kortin issueen."
+          "teksti": "Tarkista SVG-tuonti",
+          "valmis": "Testit 3–5 menevät läpi, testien ja tarkistuksen tulokset ovat issuessa, ja issuen rivi 4 Tarkistettu on rastitettu.",
+          "tallenna": "Testien 3–5 tulokset ja tarkistuksen kommentti tuonnin kortin issueen."
+        },
+        {
+          "id": "43-16",
+          "teksti": "Raportoi ja kirjaa tuonnin kortti",
+          "valmis": "Tilatiedosto on päivitetty, project-docs/AI-loki/ai-loki.md merkintä on tiedostossa project-docs/AI-loki/ai-loki.md, tuonnin koodi ja testit ovat GitHubissa, ja kortin issue on suljettu.",
+          "tallenna": "Tuonnin koodi, testit, PROJEKTIN-TILA.md ja project-docs/AI-loki/ai-loki.md GitHubissa."
         },
         {
           "id": "43-9",
@@ -1196,6 +1220,12 @@
           "lahde": "auto"
         },
         {
+          "id": "tiedosto:project-docs/Rajapinnat/SVG_tuontifunktio.md",
+          "tyyppi": "tiedosto",
+          "polku": "project-docs/Rajapinnat/SVG_tuontifunktio.md",
+          "lahde": "auto"
+        },
+        {
           "id": "tiedosto:.github/copilot-instructions.md",
           "tyyppi": "tiedosto",
           "polku": ".github/copilot-instructions.md",
@@ -1208,15 +1238,33 @@
           "lahde": "auto"
         },
         {
+          "id": "tiedosto:vektoripaja/tuonti.py",
+          "tyyppi": "tiedosto",
+          "polku": "vektoripaja/tuonti.py",
+          "lahde": "auto"
+        },
+        {
+          "id": "tiedosto:vektoripaja/ikkuna.py",
+          "tyyppi": "tiedosto",
+          "polku": "vektoripaja/ikkuna.py",
+          "lahde": "auto"
+        },
+        {
           "id": "tiedosto:Testiaineisto/rajoitteet.svg",
           "tyyppi": "tiedosto",
           "polku": "Testiaineisto/rajoitteet.svg",
           "lahde": "auto"
         },
         {
-          "id": "tiedosto:havainto.md",
+          "id": "tiedosto:PROJEKTIN-TILA.md",
           "tyyppi": "tiedosto",
-          "polku": "havainto.md",
+          "polku": "PROJEKTIN-TILA.md",
+          "lahde": "auto"
+        },
+        {
+          "id": "kansio:project-docs/Rajapinnat/",
+          "tyyppi": "kansio",
+          "polku": "project-docs/Rajapinnat/",
           "lahde": "auto"
         },
         {
@@ -1470,12 +1518,6 @@
       "tuotos": "Testit 12–14 · inflate ja sivumäärän säädin · putkigeometrian rajoitteet `kirjastot.md`:ssä · orientaatiowidget ja view lock -painike · viikon release.",
       "valmis": "Inflate on valmis, kun oma polkusi muuttuu putkeksi, sivumäärän voi valita väliltä 3–8 ja testit 12–13 menevät läpi. Kamera on valmis, kun orientaatiowidgetin akselin napsautus kääntää kameran suoraan akselin suuntaan, view lock estää kierron ja testi 14 menee läpi. Jos kamera siirtyy viikolle 49, siirto on ohjaajan kanssa sovittu vaihtoehto eikä virhe.",
       "tarkistukset": [
-        {
-          "id": "tiedosto:PROJEKTIN-TILA.md",
-          "tyyppi": "tiedosto",
-          "polku": "PROJEKTIN-TILA.md",
-          "lahde": "auto"
-        },
         {
           "id": "tagi:v0.0.48",
           "tyyppi": "tagi",

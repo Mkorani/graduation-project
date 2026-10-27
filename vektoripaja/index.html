@@ -17,10 +17,10 @@
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
-  <link rel="stylesheet" href="styles.css?v2.8.4-20261023">
-  <script src="sisalto.js?v2.8.4-20261023" defer></script>
-  <script src="kuvakaappaukset.js?v2.8.4-20261023" defer></script>
-  <script src="app.js?v2.8.4-20261023" defer></script>
+  <link rel="stylesheet" href="styles.css?v2.8.4-20261027">
+  <script src="sisalto.js?v2.8.4-20261027" defer></script>
+  <script src="kuvakaappaukset.js?v2.8.4-20261027" defer></script>
+  <script src="app.js?v2.8.4-20261027" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#sisalto">Siirry sisältöön</a>
@@ -247,7 +247,7 @@
         <ol class="workflow-loop">
           <li><span>1</span><strong>Suunnittele</strong><small>Copilot pilkkoo tavoitteen kortiksi</small></li>
           <li><span>2</span><strong>Siirrä</strong><small>kortti issueksi</small></li>
-          <li><span>3</span><strong>Rakenna</strong><small>testi ensin, sitten koodi</small></li>
+          <li><span>3</span><strong>Rakenna</strong><small>3a testi ensin, 3b sitten koodi</small></li>
           <li><span>4</span><strong>Tarkista</strong><small>itse, testeillä</small></li>
           <li><span>5</span><strong>Raportoi</strong><small>kerrot tuloksen, Copilot päivittää tilatiedoston</small></li>
           <li><span>6</span><strong>Kirjaa</strong><small>commit ja [[tiedosto:ai-loki|AI-loki]]</small></li>
@@ -465,22 +465,26 @@
 <nav class="project-phase-path" aria-label="Projektin vaiheet"><a href="#week-40" data-open-week="40">1. Valmistelu</a><a href="#week-43" data-open-week="43" aria-current="step">2. 3D-malli</a><a href="#week-50" data-open-week="50">3. Kokeiltava versio</a><a href="#week-5" data-open-week="5">4. Parannukset</a><a href="#week-10" data-open-week="10">5. Julkaisu ja näyttö</a></nav>
           <section class="card project-connection" aria-labelledby="week-43-project-connection">
             <h2 class="section-label" id="week-43-project-connection">Miten tämän viikon asiat liittyvät kokonaisprojektiin</h2>
-            <p>Vektoripajan lähtöaineisto on käyttäjän Inkscapessa tekemä SVG-piirros. Tällä viikolla tuot sen polut sovellukseen ja tarkistat, että myös virheelliset tiedostot käsitellään hallitusti. Tuonti luo pohjan osien rakenteelle ja myöhemmille 3D-muodoille.</p>
+            <p>Vektoripajan lähtöaineisto on käyttäjän Inkscapessa tekemä SVG-piirros. Tällä jaksolla tuot sen polut sovellukseen ja tarkistat, että myös virheelliset tiedostot käsitellään hallitusti, koska tuonti on pohja osien rakenteelle ja 3D-muodoille. Jakso kestää kaksi kalenteriviikkoa (19.–30.10.): 1. palaveri on 19.–20.10. ja 2. palaveri 26.–27.10., ja viikon kirjaus kirjoitetaan perjantaina 30.10. Ensimmäisen viikon lopussa 23.10. työvaiheet 1–7 ovat valmiina.</p>
             <h2 class="section-label project-week-goal">Viikon tavoite</h2>
             <p>Käyttäjä voi avata oman SVG-piirroksensa Vektoripajassa.</p>
           </section>
 
           <section class="view-section">
-            <div class="section-heading-row"><h2>Viikon työvaiheet</h2><span class="week-status" data-week-status>0 / 12</span></div>
+            <div class="section-heading-row"><h2>Viikon työvaiheet</h2><span class="week-status" data-week-status>0 / 16</span></div>
             <div class="task-list">
             <label class="task-row"><input type="checkbox" data-task="43-10"><span class="task-box" aria-hidden="true"></span><span class="task-text">Kirjaa asiakkaiden vastaukset</span></label>
             <label class="task-row"><input type="checkbox" data-task="43-12"><span class="task-box" aria-hidden="true"></span><span class="task-text">Kirjaa käyttöliittymävaatimus</span></label>
+            <label class="task-row"><input type="checkbox" data-task="43-15"><span class="task-box" aria-hidden="true"></span><span class="task-text">Sovi dokumentointitapa</span></label>
             <label class="task-row"><input type="checkbox" data-task="43-1"><span class="task-box" aria-hidden="true"></span><span class="task-text">Piirrä tuonnin testiaineisto</span></label>
-            <label class="task-row"><input type="checkbox" data-task="43-7"><span class="task-box" aria-hidden="true"></span><span class="task-text">Tallenna tuonnin testiaineisto</span></label>
+            <label class="task-row"><input type="checkbox" data-task="43-7"><span class="task-box" aria-hidden="true"></span><span class="task-text">Tee testien 4 ja 5 tiedostot</span></label>
             <label class="task-row"><input type="checkbox" data-task="43-2"><span class="task-box" aria-hidden="true"></span><span class="task-text">Määrittele tuonnin rajapinta ja testit</span></label>
             <label class="task-row"><input type="checkbox" data-task="43-3"><span class="task-box" aria-hidden="true"></span><span class="task-text">Suunnittele sovelluksen rakenne</span></label>
-            <label class="task-row"><input type="checkbox" data-task="43-4"><span class="task-box" aria-hidden="true"></span><span class="task-text">Rakenna SVG-tuonti</span></label>
-            <label class="task-row"><input type="checkbox" data-task="43-8"><span class="task-box" aria-hidden="true"></span><span class="task-text">Tarkista ja kirjaa SVG-tuonti</span></label>
+            <label class="task-row"><input type="checkbox" data-task="43-4"><span class="task-box" aria-hidden="true"></span><span class="task-text">Suunnittele tuonnin kortti</span></label>
+            <label class="task-row"><input type="checkbox" data-task="43-13"><span class="task-box" aria-hidden="true"></span><span class="task-text">Kirjoita tuonnin testit</span></label>
+            <label class="task-row"><input type="checkbox" data-task="43-14"><span class="task-box" aria-hidden="true"></span><span class="task-text">Toteuta tuonti Copilotin avulla</span></label>
+            <label class="task-row"><input type="checkbox" data-task="43-8"><span class="task-box" aria-hidden="true"></span><span class="task-text">Tarkista SVG-tuonti</span></label>
+            <label class="task-row"><input type="checkbox" data-task="43-16"><span class="task-box" aria-hidden="true"></span><span class="task-text">Raportoi ja kirjaa tuonnin kortti</span></label>
             <label class="task-row"><input type="checkbox" data-task="43-9"><span class="task-box" aria-hidden="true"></span><span class="task-text">Kokeile SVG-kirjaston rajoitteita</span></label>
             <label class="task-row"><input type="checkbox" data-task="43-5"><span class="task-box" aria-hidden="true"></span><span class="task-text">Kirjaa SVG-kirjaston rajoitteet</span></label>
             <label class="task-row"><input type="checkbox" data-task="43-11"><span class="task-box" aria-hidden="true"></span><span class="task-text">Kirjaa kirjastojen lisenssit README:hen</span></label>
@@ -493,11 +497,6 @@
             <nav class="resource-actions" data-week-resources hidden aria-label="Tämän viikon pohjat"></nav>
             <ol data-lesson-list></ol>
           </section>
-          <details class="view-section week-workflow">
-            <summary>Työsykli GitHub-issuen tekemiseen</summary>
-            <p>Käytä tätä, kun tehtäväkortti pyytää toteuttamaan muutoksen työsyklillä. Yksi kierros on yksi GitHub-issue.</p>
-            <section data-week-cycle hidden></section>
-          </details>
 
           <section class="card view-section week-finish">
             <h2>Viikon lopputarkistus</h2>
