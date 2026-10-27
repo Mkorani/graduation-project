@@ -931,6 +931,27 @@
     return n > 1 ? `${w}–${Number(w) + n - 1}` : String(w);
   }
   function weekTitleLite(w) { return (P.viikkoNimet || {})[w] || t("weekFallback", w); }
+  /* v2.8.5: yhteinen teksti voi riippua viikosta. Merkkijono näkyy sellaisenaan, ja lista yhdistetään
+     välilyönnein. Osa { teksti, vainTyosykli | ilmanTyosyklia | vainPitka | vainLyhyt } näkyy vain, kun
+     ehto täyttyy. { tyosykli, ilmanTyosyklia }, { pitka, lyhyt } ja { lisatehtava, eiLisatehtavaa }
+     valitsevat version. Samat ehdot rajaavat viikkorutiinin kohtia. */
+  const weekSpan = (w) => Number((P.pitkatViikot || {})[w]) || 1;
+  const weekHasCycle = (w) => Object.values((weekGuidance[w] || {}).tehtavat || {}).some((d) => d && d.tyosykli);
+  function weekShows(item, week) {
+    if (!item || typeof item !== "object") return true;
+    const cycle = weekHasCycle(week);
+    const long = weekSpan(week) > 1;
+    return !(item.vainTyosykli && !cycle) && !(item.ilmanTyosyklia && cycle) && !(item.vainPitka && !long) && !(item.vainLyhyt && long);
+  }
+  function weekText(value, week) {
+    if (value == null || typeof value !== "object") return value;
+    if (Array.isArray(value)) return value.map((v) => weekText(v, week)).filter(Boolean).join(" ");
+    if ("teksti" in value) return weekShows(value, week) ? weekText(value.teksti, week) : "";
+    if ("tyosykli" in value || "ilmanTyosyklia" in value) return weekText(weekHasCycle(week) ? value.tyosykli : value.ilmanTyosyklia, week);
+    if ("pitka" in value || "lyhyt" in value) return weekText(weekSpan(week) > 1 ? value.pitka : value.lyhyt, week);
+    if ("lisatehtava" in value || "eiLisatehtavaa" in value) return weekText(((weekGuidance[week] || {}).lisatehtavat || []).length ? value.lisatehtava : value.eiLisatehtavaa, week);
+    return "";
+  }
   const migrationFile = () => (P.siirtyma && P.siirtyma.tiedosto) || `${SLUG}-selaimen-tekstit.md`;
 
   function migrationBoxHtml(inTask, partial) {
@@ -1044,7 +1065,7 @@
     if (section && !section.querySelector(".tasks-lead")) {
       const lead = document.createElement("p");
       lead.className = "tasks-lead";
-      lead.textContent = t("tasksLead");
+      lead.textContent = weekText(t("tasksLead"), Number(card.dataset.week));
       section.querySelector(".section-heading-row")?.insertAdjacentElement("afterend", lead);
       const toggle = document.createElement("button");
       toggle.type = "button";
@@ -1771,9 +1792,9 @@
          { funktio, eiFunktiota } ja pohja { vainFunktio: true }: näkyy vain, kun viikolla on funktio. */
       const funktio = (weekGuidance[week] || {}).funktio || "";
       const fill = (s) => String(s ?? "").replace(/\{viikko\}/g, String(week)).replace(/\{nimi\}/g, weekTitleLite(week))
-        .replace(/\{funktio\}/g, funktio)
+        .replace(/\{funktio\}/g, funktio).replace(/\{toinenViikko\}/g, String(week + weekSpan(week) - 1))
         .replace(/\{pvm\}/g, journal.closest("[data-week]")?.querySelector("[data-week-label]")?.dataset.weekLabel || "");
-      const vaiheet = (cfg.vaiheet || []).map((v) => (v && typeof v === "object" ? (funktio ? v.funktio : v.eiFunktiota) : v)).filter(Boolean);
+      const vaiheet = (cfg.vaiheet || []).map((v) => weekText(v && typeof v === "object" && ("funktio" in v || "eiFunktiota" in v) ? (funktio ? v.funktio : v.eiFunktiota) : v, week)).filter(Boolean);
       const pohjat = (cfg.pohjat || []).filter((p) => !p.vainFunktio || funktio);
       journal.querySelectorAll(".journal-fields, .journal-lead, [data-journal-status], .journal-actions-top").forEach((x) => x.remove());
       let box = journal.querySelector("[data-journal-repo]");
@@ -1784,7 +1805,7 @@
       const blocks = (list) => list.map((p) => copyBlockHtml({ otsikko: fill(p.otsikko), teksti: fill(p.teksti) }, (x) => String(x ?? ""))).join("");
       /* Lomakkeen kanssa järjestys seuraa vaiheita: ohje, pohjat, lomake, viikon tiedoston lataus
          ja lopuksi pohjat, joilla on lopuksi: true (esimerkiksi commit-viesti). */
-      box.innerHTML = `${cfg.johdanto ? `<p>${richText(fill(cfg.johdanto))}</p>` : ""}
+      box.innerHTML = `${cfg.johdanto ? `<p>${richText(fill(weekText(cfg.johdanto, week)))}</p>` : ""}
         ${FORMS.paivakirja
           ? `${steps}${blocks(pohjat.filter((p) => !p.lopuksi))}${journalFormHtml(week)}${journalCopyHtml(week)}${blocks(pohjat.filter((p) => p.lopuksi))}`
           : `${headingCopy}${steps}${blocks(pohjat)}`}`;
@@ -1853,10 +1874,10 @@
       ? `<label class="week-form-field" for="${id}-${name}">${escapeText(label)}</label><textarea id="${id}-${name}" name="${name}" rows="3" required></textarea>`
       : `<label class="week-form-field" for="${id}-${name}">${escapeText(label)}</label><input id="${id}-${name}" name="${name}" type="text" required${name === "pvm" ? ` value="${escapeText(todayFi())}"` : ""}>`;
     const wk = (v) => String(v ?? "").replace(/\{viikko\}/g, String(week));
-    const vaiheet = (a.vaiheet || []).map((v) => `<li>${richText(wk(v))}</li>`).join("");
+    const vaiheet = (a.vaiheet || []).map((v) => `<li>${richText(wk(weekText(v, week)))}</li>`).join("");
     return `<section class="week-ai" data-week-ai="${week}" aria-labelledby="${id}-otsikko">
         <h3 class="week-form-title" id="${id}-otsikko">${escapeText(t("formAiTitle"))}</h3>
-        ${a.johdanto ? `<p>${richText(wk(a.johdanto))}</p>` : ""}
+        ${a.johdanto ? `<p>${richText(wk(weekText(a.johdanto, week)))}</p>` : ""}
         ${vaiheet ? `<ol class="journal-repo-steps">${vaiheet}</ol>` : ""}
         <form class="week-form" data-week-ai-form="${week}" novalidate>
           <p class="week-form-lead">${escapeText(t("formAiLead"))}</p>
@@ -2230,8 +2251,9 @@
     const g = weekGuidance[week] || {};
     const prev = previousWorkWeek(week);
     const prevF = prev ? String((weekGuidance[prev] || {}).funktio || "") : "";
-    return (value) => String(value ?? "").replace(/\{(viikko|nimi|feature|deliverable|done|edellinenViikko|edellinenFunktio)\}/g, (_, key) =>
+    return (value) => String(value ?? "").replace(/\{(viikko|nimi|feature|deliverable|done|edellinenViikko|edellinenFunktio|toinenViikko)\}/g, (_, key) =>
       key === "viikko" ? String(week) : key === "nimi" ? weekTitle(week) : key === "edellinenViikko" ? String(prev || "")
+        : key === "toinenViikko" ? String(week + weekSpan(week) - 1)
         : key === "edellinenFunktio" ? prevF : String(g[key] || ""));
   }
   /* Rutiinikohdan teksti voi olla { funktio, eiFunktiota }: valinta edellisen työviikon funktion mukaan. */
@@ -2254,9 +2276,10 @@
     }
     box.className = "week-lost";
     const fill = weekFill(week);
+    const forWeek = (list) => list.map((k) => ({ ...k, kysymys: weekText(k.kysymys, week), ohje: weekText(k.ohje, week), jatko: k.jatko && forWeek(k.jatko) }));
     box.innerHTML = `<summary>${escapeText(lostTree.otsikko || t("lostHeading"))}</summary>
-      ${lostTree.johdanto ? `<p class="week-lost-lead">${richText(fill(lostTree.johdanto))}</p>` : ""}
-      ${stuckTreeHtml(lostTree.kohdat, fill)}`;
+      ${lostTree.johdanto ? `<p class="week-lost-lead">${richText(fill(weekText(lostTree.johdanto, week)))}</p>` : ""}
+      ${stuckTreeHtml(forWeek(lostTree.kohdat), fill)}`;
   }
 
   function renderRoutine(card) {
@@ -2274,15 +2297,18 @@
     }
     box.className = "view-section week-routine";
     const saved = routineState[week] || {};
-    /* v2.8: kohta.vainTyosykli = true → kohta näkyy vain viikoilla, joilla on työsyklitehtävä. */
-    const hasCycle = Object.values(g.tehtavat || {}).some((d) => d && d.tyosykli);
-    const shown = routine.kohdat.map((k, i) => [k, i]).filter(([k]) => !k.vainTyosykli || hasCycle);
+    /* v2.8: kohta.vainTyosykli = true → kohta näkyy vain viikoilla, joilla on työsyklitehtävä (v2.8.5: weekShows).
+       Rastit tallentuvat kohdan indeksillä, joten uusi kohta lisätään listan loppuun ja
+       kohta.jarjestys kertoo sen paikan näkymässä. */
+    const fill = weekFill(week);
+    const shown = routine.kohdat.map((k, i) => [k, i]).filter(([k]) => weekShows(k, week))
+      .sort((a, b) => (a[0].jarjestys ?? a[1]) - (b[0].jarjestys ?? b[1]));
     const done = shown.filter(([, i]) => saved[i]).length;
     box.innerHTML = (unifiedWeeks
       ? `<summary>${escapeText(routine.otsikko || t("routineSummary"))} <span class="week-status" data-routine-status>${done} / ${shown.length}</span></summary>`
       : `<div class="section-heading-row"><h2>${escapeText(routine.otsikko || t("routineHeading"))}</h2><span class="week-status" data-routine-status>${done} / ${shown.length}</span></div>`) + `
-      ${routine.johdanto ? `<p class="week-routine-lead">${richText(routine.johdanto)}</p>` : ""}
-      <div class="task-list">${shown.map(([k, i]) => `<label class="task-row routine-row"><input type="checkbox" data-routine="${week}-${i}"${saved[i] ? " checked" : ""}><span class="task-box" aria-hidden="true"></span><span class="task-text">${k.milloin ? `<strong>${escapeText(k.milloin)}:</strong> ` : ""}${richText(weekFill(week)(routineText(k, week)))}</span></label>`).join("")}</div>`;
+      ${routine.johdanto ? `<p class="week-routine-lead">${richText(fill(weekText(routine.johdanto, week)))}</p>` : ""}
+      <div class="task-list">${shown.map(([k, i]) => `<label class="task-row routine-row"><input type="checkbox" data-routine="${week}-${i}"${saved[i] ? " checked" : ""}><span class="task-box" aria-hidden="true"></span><span class="task-text">${k.milloin ? `<strong>${escapeText(fill(weekText(k.milloin, week)))}:</strong> ` : ""}${richText(fill(weekText(routineText(k, week), week)))}</span></label>`).join("")}</div>`;
     box.querySelectorAll("[data-routine]").forEach((input) => input.addEventListener("change", () => {
       const i = Number(input.dataset.routine.split("-").pop());
       routineState[week] = { ...(routineState[week] || {}), [i]: input.checked };

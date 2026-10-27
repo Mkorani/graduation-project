@@ -108,7 +108,8 @@ window.NAYTTOPROJEKTI = {
     resumeDone: "Kaikki työvaiheet valmiina",
     exampleLabel: "✓ Esimerkki riittävästä tarkkuudesta",
     notEnoughLabel: "✗ Tämä ei vielä riitä",
-    tasksLead: "Tee viikon työvaiheet järjestyksessä. Rastita osatehtävä, kun sen Näet nyt -kohta pitää paikkansa. Työvaihe on valmis, kun kaikki sen osat on rastitettu. Jos työvaiheessa on painike Käytä työsykliä tämän muutoksen tekemiseen, osatehtävät kertovat, milloin avaat työsyklin.",
+    tasksLead: ["Tee viikon työvaiheet järjestyksessä. Rastita osatehtävä, kun sen Näet nyt -kohta pitää paikkansa. Työvaihe on valmis, kun kaikki sen osat on rastitettu.", { vainTyosykli: true, teksti: "Jos työvaiheessa on painike Käytä työsykliä tämän muutoksen tekemiseen, osatehtävät kertovat, milloin avaat työsyklin." }],
+    journalRecordPrefix: "Kirjaukseen tulee:",
     taskNumber: (i, n) => `Työvaihe ${i} / ${n}`,
     taskOpenAll: "Avaa kaikki työvaiheet",
     taskOpenCurrent: "Näytä seuraava työvaihe",
@@ -184,19 +185,28 @@ window.NAYTTOPROJEKTI = {
   },
 
   /* ---- viikkorutiini: sama joka viikko (runko v3 § 6.1). ensin: rutiini näkyy ennen työvaiheita.
-     vainTyosykli: kohta näkyy vain viikoilla, joilla on työsyklitehtävä (moottori v2.8). ---- */
+     vainTyosykli: kohta näkyy vain viikoilla, joilla on työsyklitehtävä (moottori v2.8). v2.8.5: tekstin osat
+     voivat riippua työsyklistä ja kahden viikon jaksosta (pitkatViikot), ks. app.js weekText. Rastit
+     tallentuvat kohdan indeksillä: uusi kohta lisätään listan loppuun, ja jarjestys kertoo sen paikan. ---- */
   viikkorutiini: {
     otsikko: "Viikkorutiini: palaveri ja kirjaus",
     ensin: true,
-    johdanto: "Nämä rastit eivät ole viikon työvaiheita. Jos rutiinissa on maanantain Copilot- tai krediittikohta, tee se ennen työvaihetta 1. Viikkopalaveri on maanantaina tai tiistaina. Jos viikon työvaiheessa on palaverin osatehtävä, tee palaveri siinä kohdassa ja rastita rutiinin palaverikohta samalla. Muut työvaiheet voit aloittaa ennen palaveria. Tee viimeisen työpäivän kohta viikon lopussa.",
+    johdanto: [
+      "Nämä rastit eivät ole viikon työvaiheita.",
+      { vainTyosykli: true, teksti: "Tee maanantain kohdat ennen työvaihetta 1." },
+      { lyhyt: "Viikkopalaveri on maanantaina tai tiistaina.", pitka: "Jakso kestää kaksi viikkoa, ja viikkopalaveri on kummankin viikon maanantaina tai tiistaina." },
+      "Jos viikon työvaiheessa on palaverin osatehtävä, tee palaveri siinä kohdassa ja rastita rutiinin palaverikohta samalla. Muita työvaiheita voit tehdä ennen palaveria. Jos työvaihe kertoo, että kortista sovitaan palaverissa, älä aloita kortin koodia ennen sopimusta.",
+      { lyhyt: "Tee viimeisen työpäivän kohta viikon lopussa.", pitka: "Tee viimeisen työpäivän kohta jakson lopussa viikolla {toinenViikko}." }
+    ],
     kohdat: [
       { milloin: "Maanantai", vainTyosykli: true, teksti: "Avaa [Microsoft 365 Copilot](https://m365.cloud.microsoft/chat) ja aloita uusi keskustelu: [[kuvaohje:copilot-uusi-keskustelu]], kohdat 1–2. Liitä siihen tilatiedosto PROJEKTIN-TILA.md: [[kuvaohje:copilot-tilatiedosto]]. Älä lähetä vielä viestiä. Pidä välilehti auki: työsyklin askeleessa 1 jatkat tässä keskustelussa. Jos suljet välilehden, liität tiedoston uudelleen askeleessa 1. Jos tiedostoa PROJEKTIN-TILA.md ei vielä ole koneellasi, tee tämä kohta työsyklin askeleessa 1." },
       { milloin: "Maanantai", vainTyosykli: true, teksti: "Katso krediittien kulutus. Ohje: [[ohje:krediitit]]. Kirjoita luku paperille. Kirjaat sen viikon kirjaukseen kohtaan Mitä tein ja miten?, esimerkiksi Krediitit maanantaina: 14 % käytetty." },
-      { milloin: "Maanantai tai tiistai", teksti: {
-        funktio: "Käy viikkopalaveri ohjaajan kanssa. Selitä ääneen edellisen työviikon (viikko {edellinenViikko}) funktio: {edellinenFunktio}. Kysy, onko viikon työvaiheissa jotain, mitä pitää sopia. Sopimus kirjataan issueen kommenttina Sovittu viikkopalaverissa pp.kk. (työsyklin askel 2 tai viikon työvaihe kertoo issuen).",
-        eiFunktiota: "Käy viikkopalaveri ohjaajan kanssa. Edellisellä työviikolla ei ollut selitettävää funktiota: kerro, mitä teit ja mihin jäit. Kysy, onko viikon työvaiheissa jotain, mitä pitää sopia. Sopimus kirjataan issueen kommenttina Sovittu viikkopalaverissa pp.kk. (työsyklin askel 2 tai viikon työvaihe kertoo issuen)."
+      { milloin: { lyhyt: "Maanantai tai tiistai", pitka: "Viikon {viikko} maanantai tai tiistai" }, teksti: {
+        funktio: ["Käy viikkopalaveri ohjaajan kanssa. Selitä ääneen edellisen työviikon (viikko {edellinenViikko}) funktio: {edellinenFunktio}. Kysy, onko viikon työvaiheissa jotain, mitä pitää sopia.", { tyosykli: "Sopimus kirjataan issueen kommenttina Sovittu viikkopalaverissa pp.kk. Työsyklin askel 2 kertoo issuen.", ilmanTyosyklia: "Sopimus kirjataan issueen kommenttina Sovittu viikkopalaverissa pp.kk. Viikon työvaihe kertoo issuen." }],
+        eiFunktiota: ["Käy viikkopalaveri ohjaajan kanssa. Edellisellä työviikolla ei ollut selitettävää funktiota: kerro, mitä teit ja mihin jäit. Kysy, onko viikon työvaiheissa jotain, mitä pitää sopia.", { tyosykli: "Sopimus kirjataan issueen kommenttina Sovittu viikkopalaverissa pp.kk. Työsyklin askel 2 kertoo issuen.", ilmanTyosyklia: "Sopimus kirjataan issueen kommenttina Sovittu viikkopalaverissa pp.kk. Viikon työvaihe kertoo issuen." }]
       } },
-      { milloin: "Viikon viimeinen työpäivä", teksti: "Kirjoita viikon kirjaus lomakkeeseen Viikon vastaukset ja tallenna se tiedostoksi [[tiedosto:projektipaivakirja|projektipaivakirja-vko-{viikko}.md]]. Ohje on viikon sivun kohdassa Viikon kirjaus." }
+      { milloin: { lyhyt: "Viikon viimeinen työpäivä", pitka: "Jakson viimeinen työpäivä viikolla {toinenViikko}" }, teksti: "Kirjoita viikon kirjaus lomakkeeseen Viikon vastaukset ja tallenna se tiedostoksi [[tiedosto:projektipaivakirja|projektipaivakirja-vko-{viikko}.md]]. Ohje on viikon sivun kohdassa Viikon kirjaus." },
+      { milloin: "Viikon {toinenViikko} maanantai tai tiistai", vainPitka: true, jarjestys: 2.5, teksti: "Käy jakson toinen viikkopalaveri ohjaajan kanssa. Näytä, mitä olet tehnyt jakson ensimmäisellä viikolla, ja kysy, onko jotain korjattavaa ennen jakson loppua." }
     ]
   },
 
@@ -205,9 +215,9 @@ window.NAYTTOPROJEKTI = {
     otsikko: "Jos et tiedä, mitä tehdä",
     johdanto: "Käy kysymykset läpi järjestyksessä. Kun kysymys sopii tilanteeseesi, toimi sen ohjeen mukaan.",
     kohdat: [
-      { kysymys: "1. Onko viikon työvaiheissa rastittamaton osatehtävä?", ohje: "Jatka ensimmäisestä rastittamattomasta osatehtävästä. Jos se on työsyklin askel, avaa [[github:issues?q=is%3Aissue+is%3Aopen+label%3Ateht%C3%A4v%C3%A4kortti|avoimet tehtäväkortit]] ja kortin issue. Jatka ensimmäisestä askeleesta, jonka rasti puuttuu issuen kohdasta Sykli." },
-      { kysymys: "2. Kaikki osatehtävät on rastitettu, mutta viikkoa on jäljellä?", ohje: "Jos viikolla on kohta Lisätehtävä, tee se. Jos ei ole, lähetä ohjaajalle Teams-viesti ja kysy lisätehtävää. Ohje: [[ohje:teams]]." },
-      { kysymys: "3. Viikko loppuu, ja työ on kesken?", ohje: "Kirjoita viikon kirjaukseen kohtaan Mitä tein ja miten?, mihin jäit. Jos viikolla on työsykli, kirjoita sama tilatiedoston PROJEKTIN-TILA.md kohtaan Seuraavana. Tee commit ja push. Ohje: [[ohje:commit]]. Ohjaaja päättää jatkosta seuraavan viikon palaverissa." },
+      { kysymys: "1. Onko viikon työvaiheissa rastittamaton osatehtävä?", ohje: ["Jatka ensimmäisestä rastittamattomasta osatehtävästä.", { vainTyosykli: true, teksti: "Jos se on työsyklin askel, avaa [[github:issues?q=is%3Aissue+is%3Aopen+label%3Ateht%C3%A4v%C3%A4kortti|avoimet tehtäväkortit]] ja kortin issue. Jatka ensimmäisestä askeleesta, jonka rasti puuttuu issuen kohdasta Sykli." }] },
+      { kysymys: { lyhyt: "2. Kaikki osatehtävät on rastitettu, mutta viikkoa on jäljellä?", pitka: "2. Kaikki osatehtävät on rastitettu, mutta jaksoa on jäljellä?" }, ohje: { lisatehtava: "Tee viikon kohta Lisätehtävä. Jos sekin on tehty, lähetä ohjaajalle Teams-viesti ja kysy lisätehtävää. Ohje: [[ohje:teams]].", eiLisatehtavaa: "Lähetä ohjaajalle Teams-viesti ja kysy lisätehtävää. Ohje: [[ohje:teams]]." } },
+      { kysymys: { lyhyt: "3. Viikko loppuu, ja työ on kesken?", pitka: "3. Jakso loppuu viikolla {toinenViikko}, ja työ on kesken?" }, ohje: "Kirjoita viikon kirjaukseen kohtaan Mitä tein ja miten?, mihin jäit. Jos repositoryssa on tilatiedosto PROJEKTIN-TILA.md, kirjoita sama sen kohtaan Seuraavana. Tee commit ja push. Ohje: [[ohje:commit]]. Ohjaaja päättää jatkosta seuraavan viikon palaverissa." },
       {
         kysymys: "4. Mikään kohdista 1–3 ei auta?",
         ohje: "Lähetä ohjaajalle Teams-viesti tällä pohjalla. Ohje: [[ohje:teams]].",
@@ -1947,7 +1957,7 @@ window.NAYTTOPROJEKTI = {
       deliverable: "Rajapinta ja testien odotetut tulokset · testit 6–8 ja lisätesti · osien hierarkia ja hierarkiapaneeli agentin tekemänä · valinnan toiminta ja revolven valintatapojen vertailu [[tiedosto:suunnitelma|suunnitelmassa]] · viikon release.",
       why: "Ilman solmupuuta osat eivät seuraa toisiaan. Silloin pää jää paikalleen, kun vartaloa siirretään, eikä .obj-tiedostoon synny osia.",
       done: "Oman piirroksesi osat näkyvät hierarkiapaneelissa samassa järjestyksessä kuin Inkscapessa, testit menevät läpi, ja [[tiedosto:suunnitelma|suunnitelmassa]] ovat valinnan toiminta ja revolven vertailu.",
-      record: "Kirjoita kirjaus perjantaina 13.11.\nMitä tein ja miten?: kirjoita lyhyesti, mitä teit. Kirjoita paperilta molemmat krediittiluvut, ennen agenttia ja sen jälkeen. Liitä selityspohja ja täytä se funktiosta tee_solmu, joka on tiedostossa vektoripaja/hierarkia.py. Pohjan Testi-riville tulevat testit 6–8.\nMiksi tein näin?: kirjoita, mitä hyväksyit tai hylkäsit agentin muutoksista, sekä valinnan päätös ja revolven suositus perusteluineen.\nMissä työnäyte on?: liitä linkit tässä järjestyksessä: [[tiedosto:rajapinnat|Rajapinnat/Hierarkian_muunnos.md]], hierarkian kortin issue, sen Sovittu viikkopalaverissa -kommentti, tarkistuksen kommentti, [[tiedosto:suunnitelma|suunnitelma.md]] ja release v0.0.45. Lisää loppuun nämä näyttömatriisin vaatimukset: testaa ohjelman toimintoja, käyttää rakenteista ohjelmointia toteutuksissa, [[naytto|tulkitsee suunnitelmia ja toteuttaa käyttöliittymän tai sen osia]], sopii tehtävistä tiimin muiden jäsenten kanssa, etsii ratkaisuvaihtoehtoja ja ratkoo ongelmia yhdessä tiimin kanssa, jakaa kehitystiimin kanssa toteutettavat toiminnot tehtäviksi, kehittää ohjelmiston toimintalogiikkaa, käyttää versionhallintaa, julkaisee ohjelman tuotantoympäristöön sekä suunnittelee, toteuttaa ja testaa ohjelmiston ohjelmistokomponenttikirjastoa käyttäen.",
+      record: "Kirjoita kirjaus perjantaina 13.11.\nMitä tein ja miten?: kirjoita lyhyesti, mitä teit. Kirjoita paperilta molemmat krediittiluvut, ennen agenttia ja sen jälkeen. Liitä selityspohja ja täytä se funktiosta tee_solmu, joka on tiedostossa vektoripaja/hierarkia.py. Pohjan Testi-riville tulevat testit 6–8.\nMiksi tein näin?: kirjoita, mitä hyväksyit tai hylkäsit agentin muutoksista, sekä valinnan päätös ja revolven suositus perusteluineen.\nMissä työnäyte on?: liitä linkit tässä järjestyksessä: [[tiedosto:rajapinnat|Rajapinnat/Hierarkian_muunnos.md]], hierarkian kortin issue, sen Sovittu viikkopalaverissa -kommentti, tarkistuksen kommentti, [[tiedosto:suunnitelma|suunnitelma.md]] ja release v0.0.45. Lisää loppuun nämä näyttömatriisin vaatimukset, kukin omalle rivilleen:\n- testaa ohjelman toimintoja\n- käyttää rakenteista ohjelmointia toteutuksissa\n- [[naytto|tulkitsee suunnitelmia ja toteuttaa käyttöliittymän tai sen osia]]\n- sopii tehtävistä tiimin muiden jäsenten kanssa\n- etsii ratkaisuvaihtoehtoja ja ratkoo ongelmia yhdessä tiimin kanssa\n- jakaa kehitystiimin kanssa toteutettavat toiminnot tehtäviksi\n- kehittää ohjelmiston toimintalogiikkaa\n- käyttää versionhallintaa\n- julkaisee ohjelman tuotantoympäristöön\n- suunnittelee, toteuttaa ja testaa ohjelmiston ohjelmistokomponenttikirjastoa käyttäen",
       funktio: "tee_solmu tiedostossa vektoripaja/hierarkia.py, joka tekee SVG:n ryhmästä mallin osan (testit 6–8)",
       skills: ["Puun läpikäynti: rekursio tai silmukka","Puhdas funktio ja rajapinta","Käyttöliittymän osa kirjattujen päätösten mukaan","Agentti-kaista: agenttitila"],
       termit: ["solmupuu","maailmamuunnos","hierarkiapaneeli","puhdas funktio","rajapinta"],
@@ -3939,18 +3949,19 @@ window.NAYTTOPROJEKTI = {
     tiedostonimi: "projektipaivakirja.md",
     polku: "project-docs/Päiväkirja/projektipaivakirja.md",
     repo: {
-      johdanto: "Kirjoita viikon kirjaus viikon viimeisenä työpäivänä. Kirjoitat vastaukset lomakkeeseen Viikon vastaukset ja tallennat ne viikon omaksi tiedostoksi projektipaivakirja-vko-{viikko}.md kansioon [[tiedosto:projektipaivakirja|project-docs/Päiväkirja]]. [[tiedosto:projektipaivakirja|Projektipäiväkirjan]] aiemmat tekstit pysyvät ennallaan.",
+      johdanto: [{ lyhyt: "Kirjoita viikon kirjaus viikon viimeisenä työpäivänä.", pitka: "Kirjoita jakson kirjaus jakson viimeisenä työpäivänä viikolla {toinenViikko}." }, "Kirjoitat vastaukset lomakkeeseen Viikon vastaukset ja tallennat ne viikon omaksi tiedostoksi projektipaivakirja-vko-{viikko}.md kansioon [[tiedosto:projektipaivakirja|project-docs/Päiväkirja]]. [[tiedosto:projektipaivakirja|Projektipäiväkirjan]] aiemmat tekstit pysyvät ennallaan."],
       otsikko: "Vko {viikko} – {nimi}",
       vaiheet: [
         {
-          funktio: "Kirjoita vastaukset lomakkeen Viikon vastaukset kolmeen kenttään. Teksti tallentuu tähän selaimeen. Mitä tein ja miten?: mitä teit, maanantain krediittiluku, jos katsoit sen, ja viikon funktion selitys selityspohjalla. Kopioi selityspohja Kopioi-painikkeella, liitä se kenttään ja täytä ___-kohdat. Viikon funktio on {funktio}. Funktion koodi on kortin Tiedostot-kohdan tiedostossa: etsi funktion nimi Ctrl+F:llä. Valitse hakukentästä Match Whole Word (Alt+W) ja hae sanat if, for ja while. Rekursiossa funktio kutsuu itseään omalla nimellään. Miksi tein näin?: päätökset ja perustelut. Missä työnäyte on?: Tallenna nämä tiedot -listan työnäytteiden numerot ja linkit sekä näyttömatriisin vaatimukset. Numerot ja linkit löydät näin: [[ohje:kopioi-osoite]]. Malli: [[tiedosto:projektipaivakirja]].",
-          eiFunktiota: "Kirjoita vastaukset lomakkeen Viikon vastaukset kolmeen kenttään. Teksti tallentuu tähän selaimeen. Mitä tein ja miten?: mitä teit ja maanantain krediittiluku, jos katsoit sen. Tällä viikolla ei ole funktiota, joten selityspohjaa ei tarvita. Miksi tein näin?: päätökset ja perustelut. Missä työnäyte on?: Tallenna nämä tiedot -listan työnäytteiden numerot ja linkit sekä näyttömatriisin vaatimukset. Numerot ja linkit löydät näin: [[ohje:kopioi-osoite]]. Malli: [[tiedosto:projektipaivakirja]]."
+          funktio: ["Kirjoita vastaukset lomakkeen Viikon vastaukset kolmeen kenttään. Teksti tallentuu tähän selaimeen.", { tyosykli: "Mitä tein ja miten?: mitä teit, maanantain krediittiluku ja viikon funktion selitys selityspohjalla.", ilmanTyosyklia: "Mitä tein ja miten?: mitä teit ja viikon funktion selitys selityspohjalla." }, "Kopioi selityspohja Kopioi-painikkeella, liitä se kenttään ja vaihda isoilla kirjaimilla kirjoitetut kohdat omiksi sanoiksesi. Viikon funktio on {funktio}. Funktion koodi on kortin Tiedostot-kohdan tiedostossa: avaa tiedosto ja etsi funktion nimi painamalla Ctrl+F. Valitse hakukentästä Match Whole Word ja hae hakusanat yksi kerrallaan. Jos sana löytyy funktion riveiltä, funktiossa on valinta tai toisto. Rekursiossa funktio kutsuu itseään omalla nimellään.", "Miksi tein näin?: päätökset ja perustelut. Missä työnäyte on?: kohdan Kirjaukseen tulee työnäytteiden numerot ja linkit sekä näyttömatriisin vaatimukset. Numerot ja linkit löydät näin: [[ohje:kopioi-osoite]]. Malli: [[tiedosto:projektipaivakirja]]."],
+          eiFunktiota: ["Kirjoita vastaukset lomakkeen Viikon vastaukset kolmeen kenttään. Teksti tallentuu tähän selaimeen.", { tyosykli: "Mitä tein ja miten?: mitä teit ja maanantain krediittiluku.", ilmanTyosyklia: "Mitä tein ja miten?: mitä teit." }, "Tällä viikolla ei ole funktiota, joten selityspohjaa ei tarvita.", "Miksi tein näin?: päätökset ja perustelut. Missä työnäyte on?: kohdan Kirjaukseen tulee työnäytteiden numerot ja linkit sekä näyttömatriisin vaatimukset. Numerot ja linkit löydät näin: [[ohje:kopioi-osoite]]. Malli: [[tiedosto:projektipaivakirja]]."]
         },
         "Valitse Lataa viikon [[tiedosto:projektipaivakirja|päiväkirja]] ja tallenna tiedosto kansioon [[tiedosto:projektipaivakirja|project-docs/Päiväkirja]]: [[ohje:lataa-kirjaukset]]. Tiedoston nimi on projektipaivakirja-vko-{viikko}.md. Jos tiedosto on jo kansiossa, korvaa se: uusi tiedosto sisältää lomakkeen kaikki vastaukset.",
-        "Tee commit ja push. Ohje: [[ohje:commit]]. Changes-listassa on tiedosto projektipaivakirja-vko-{viikko}.md. Commit-viesti on kopioitavana."
+        "Tee commit ja push. Ohje: [[ohje:commit]]. Changes-listassa on tiedosto projektipaivakirja-vko-{viikko}.md. Commit-viesti on kopioitavana. Kun commit on GitHubissa, kansiossa [[tiedosto:projektipaivakirja|project-docs/Päiväkirja]] on tiedosto projektipaivakirja-vko-{viikko}.md."
       ],
       pohjat: [
-        { otsikko: "Selityspohja funktiolle: kopioi ja täytä", vainFunktio: true, teksti: "Funktio ___ saa ___. Se palauttaa ___.\nValitsee (if-ehto): ___ (tai: ei valintaa)\nToistaa (silmukka tai rekursio): ___ (tai: ei toistoa)\nTesti ___ tarkistaa ___." },
+        { otsikko: "Selityspohja funktiolle: kopioi ja täytä", vainFunktio: true, teksti: "Funktio NIMI saa SYÖTTEEN. Se palauttaa PALUUARVON.\nValitsee (if-ehto): MITÄ FUNKTIO VALITSEE tai ei valintaa\nToistaa (silmukka tai rekursio): MITÄ FUNKTIO TOISTAA tai ei toistoa\nTesti NUMERO tarkistaa, MITÄ TESTI TARKISTAA." },
+        { otsikko: "Hakusanat: hae yksi kerrallaan", vainFunktio: true, teksti: "if\nfor\nwhile" },
         { otsikko: "Commit-viesti: kopioi tämä", lopuksi: true, teksti: "Kirjaa viikon {viikko} projektipäiväkirja" }
       ]
     }
@@ -3968,11 +3979,11 @@ window.NAYTTOPROJEKTI = {
       ]
     },
     ailoki: {
-      johdanto: "Kirjaa tekoälyn käyttö samana päivänä: yksi merkintä tehtäväkorttia kohden. Merkinnät tallennetaan viikon omaksi tiedostoksi [[tiedosto:ai-loki|ai-loki-vko-{viikko}.md]], joten tiedoston [[tiedosto:ai-loki|ai-loki.md]] aiemmat merkinnät pysyvät ennallaan. Ohje: [[ohje:ailoki-lomake]].",
+      johdanto: [{ tyosykli: "Kirjaa tekoälyn käyttö samana päivänä tai viimeistään työsyklin askeleessa 6:", ilmanTyosyklia: "Kirjaa tekoälyn käyttö samana päivänä tai viimeistään viikon työvaiheessa, joka käskee kirjaamaan sen:" }, "yksi merkintä tehtäväkorttia kohden. Merkinnät tallennetaan viikon omaksi tiedostoksi [[tiedosto:ai-loki|ai-loki-vko-{viikko}.md]], joten tiedoston [[tiedosto:ai-loki|ai-loki.md]] aiemmat merkinnät pysyvät ennallaan. Ohje: [[ohje:ailoki-lomake]]."],
       vaiheet: [
         "Täytä lomake ja valitse Lisää merkintä. Työkalut ja kaista -kenttään tulevat kaikki käyttämäsi tekoälytyökalut ja kaista, esimerkiksi GitHub Copilot, Täydennys-kaista. Jos kortti ei ollut käytössä, kaista on ilman korttia.",
         "Valitse Lataa viikon [[tiedosto:ai-loki|AI-loki]] ja tallenna tiedosto kansioon [[tiedosto:ai-loki|project-docs/AI-loki]]: [[ohje:lataa-kirjaukset]]. Tiedoston nimi on [[tiedosto:ai-loki|ai-loki-vko-{viikko}.md]]. Jos tiedosto on jo kansiossa, korvaa se: uusi tiedosto sisältää viikon kaikki merkinnät.",
-        "Tee commit ja push. Ohje: [[ohje:commit]]. Changes-listassa on tiedosto [[tiedosto:ai-loki|ai-loki-vko-{viikko}.md]]. Jos kirjaat merkinnän työsyklin askeleessa 6, tee commit askeleen ohjeen mukaan."
+        ["Tee commit ja push. Ohje: [[ohje:commit]]. Changes-listassa on tiedosto [[tiedosto:ai-loki|ai-loki-vko-{viikko}.md]].", { tyosykli: "Jos kirjaat merkinnän työsyklin askeleessa 6, tee commit askeleen ohjeen mukaan.", ilmanTyosyklia: "Jos kirjaat merkinnän viikon työvaiheessa, tee commit sen ohjeen mukaan." }]
       ]
     }
   },
