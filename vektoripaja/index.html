@@ -17,10 +17,10 @@
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
-  <link rel="stylesheet" href="styles.css?v2.8.4-20261027">
-  <script src="sisalto.js?v2.8.4-20261027" defer></script>
-  <script src="kuvakaappaukset.js?v2.8.4-20261027" defer></script>
-  <script src="app.js?v2.8.4-20261027" defer></script>
+  <link rel="stylesheet" href="styles.css?v2.8.4-20261027b">
+  <script src="sisalto.js?v2.8.4-20261027b" defer></script>
+  <script src="kuvakaappaukset.js?v2.8.4-20261027b" defer></script>
+  <script src="app.js?v2.8.4-20261027b" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#sisalto">Siirry sisältöön</a>
@@ -481,14 +481,14 @@
             <label class="task-row"><input type="checkbox" data-task="43-2"><span class="task-box" aria-hidden="true"></span><span class="task-text">Määrittele tuonnin rajapinta ja testit</span></label>
             <label class="task-row"><input type="checkbox" data-task="43-3"><span class="task-box" aria-hidden="true"></span><span class="task-text">Suunnittele sovelluksen rakenne</span></label>
             <label class="task-row"><input type="checkbox" data-task="43-4"><span class="task-box" aria-hidden="true"></span><span class="task-text">Suunnittele tuonnin kortti</span></label>
-            <label class="task-row"><input type="checkbox" data-task="43-13"><span class="task-box" aria-hidden="true"></span><span class="task-text">Kirjoita tuonnin testit</span></label>
-            <label class="task-row"><input type="checkbox" data-task="43-14"><span class="task-box" aria-hidden="true"></span><span class="task-text">Toteuta tuonti Copilotin avulla</span></label>
-            <label class="task-row"><input type="checkbox" data-task="43-8"><span class="task-box" aria-hidden="true"></span><span class="task-text">Tarkista SVG-tuonti</span></label>
-            <label class="task-row"><input type="checkbox" data-task="43-16"><span class="task-box" aria-hidden="true"></span><span class="task-text">Raportoi ja kirjaa tuonnin kortti</span></label>
-            <label class="task-row"><input type="checkbox" data-task="43-9"><span class="task-box" aria-hidden="true"></span><span class="task-text">Kokeile SVG-kirjaston rajoitteita</span></label>
-            <label class="task-row"><input type="checkbox" data-task="43-5"><span class="task-box" aria-hidden="true"></span><span class="task-text">Kirjaa SVG-kirjaston rajoitteet</span></label>
+            <label class="task-row"><input type="checkbox" data-task="43-13"><span class="task-box" aria-hidden="true"></span><span class="task-text">Kirjoita testit ennen koodia</span></label>
+            <label class="task-row"><input type="checkbox" data-task="43-14"><span class="task-box" aria-hidden="true"></span><span class="task-text">Pyydä Copilotia tekemään tuonti</span></label>
+            <label class="task-row"><input type="checkbox" data-task="43-8"><span class="task-box" aria-hidden="true"></span><span class="task-text">Tarkista, että tuonti toimii</span></label>
+            <label class="task-row"><input type="checkbox" data-task="43-16"><span class="task-box" aria-hidden="true"></span><span class="task-text">Kirjaa tulos ja tallenna työ GitHubiin</span></label>
+            <label class="task-row"><input type="checkbox" data-task="43-9"><span class="task-box" aria-hidden="true"></span><span class="task-text">Kokeile, mitä SVG-kirjasto ei osaa</span></label>
+            <label class="task-row"><input type="checkbox" data-task="43-5"><span class="task-box" aria-hidden="true"></span><span class="task-text">Kirjaa kirjaston rajoitteet</span></label>
             <label class="task-row"><input type="checkbox" data-task="43-11"><span class="task-box" aria-hidden="true"></span><span class="task-text">Kirjaa kirjastojen lisenssit README:hen</span></label>
-            <label class="task-row"><input type="checkbox" data-task="43-6"><span class="task-box" aria-hidden="true"></span><span class="task-text">Julkaise SVG-tuonti</span></label>
+            <label class="task-row"><input type="checkbox" data-task="43-6"><span class="task-box" aria-hidden="true"></span><span class="task-text">Julkaise viikon versio</span></label>
             </div>
           </section>
 
@@ -559,7 +559,7 @@
           <section class="card view-section week-finish">
             <h2>Viikon lopputarkistus</h2>
             <h3>Toiminta on tarkistettu, kun</h3><p class="checkpoint"></p>
-            <h3>Työnäyte talteen</h3><p class="evidence">rajapinta [[tiedosto:suunnitelma|suunnitelmassa]], testit 6–8 ja maailmamuunnoksen lisätesti hierarkian kortin issuessa, hierarkiapaneeli releasessa v0.0.45 ja valinnan päätös [[tiedosto:suunnitelma|suunnitelmassa]].</p>
+            <h3>Työnäyte talteen</h3><p class="evidence">rajapinta [[tiedosto:rajapinnat|`project-docs/Rajapinnat/Hierarkian_muunnos.md`]], testit 6–8 ja maailmamuunnoksen lisätesti hierarkian kortin issuessa, hierarkiapaneeli releasessa v0.0.45 ja valinnan päätös [[tiedosto:suunnitelma|suunnitelmassa]].</p>
           </section>
           <details class="view-section">
             <summary>Mitä osaamista viikon työ osoittaa?</summary>
@@ -795,7 +795,7 @@
           <section class="card view-section week-finish">
             <h2>Viikon lopputarkistus</h2>
             <h3>Toiminta on tarkistettu, kun</h3><p class="checkpoint"></p>
-            <h3>Työnäyte talteen</h3><p class="evidence">pivotin syötteen tarkistuksen rajapinta [[tiedosto:suunnitelma|`suunnitelma.md`]]:ssä, testit 16–18 issueissa ja pivotin kentät releasessa v0.0.50.</p>
+            <h3>Työnäyte talteen</h3><p class="evidence">pivotin syötteen tarkistuksen rajapinta [[tiedosto:rajapinnat|`project-docs/Rajapinnat/Pivotin_tarkistus.md`]], testit 16–18 issueissa ja pivotin kentät releasessa v0.0.50.</p>
           </section>
           <details class="view-section">
             <summary>Mitä osaamista viikon työ osoittaa?</summary>

@@ -6,8 +6,8 @@
   "paivaton": false,
   "generoitu": "2026-10-27",
   "lahde": {
-    "sisalto.js": "5c70024e268b75f2",
-    "index.html": "1b5d00b130079afd"
+    "sisalto.js": "af55b8bbf560b21a",
+    "index.html": "0dd26b7440f1dac1"
   },
   "viikot": [
     40,
@@ -1128,7 +1128,7 @@
           "id": "43-2",
           "teksti": "Määrittele tuonnin rajapinta ja testit",
           "valmis": "Tuontifunktion rajapinta ja testien 3–5 odotetut tulokset ovat tiedostossa project-docs/Rajapinnat/ GitHubissa.",
-          "tallenna": "Rajapinta ja odotetut tulokset tiedostossa project-docs/Rajapinnat/SVG_tuontifunktio.md GitHubissa. Käytät niitä työvaiheissa Suunnittele tuonnin kortti ja Kirjoita tuonnin testit."
+          "tallenna": "Rajapinta ja odotetut tulokset tiedostossa project-docs/Rajapinnat/SVG_tuontifunktio.md GitHubissa. Käytät niitä työvaiheissa Suunnittele tuonnin kortti ja Kirjoita testit ennen koodia."
         },
         {
           "id": "43-3",
@@ -1144,51 +1144,51 @@
         },
         {
           "id": "43-13",
-          "teksti": "Kirjoita tuonnin testit",
-          "valmis": "Testit 3–5 ovat tiedostossa tests/test_tuonti.py sinun odotetuilla tuloksillasi, ja issuen rivi 3a on rastitettu.",
-          "tallenna": "Testit tiedostossa tests/test_tuonti.py omalla koneellasi. Ne menevät GitHubiin työvaiheessa Raportoi ja kirjaa tuonnin kortti."
+          "teksti": "Kirjoita testit ennen koodia",
+          "valmis": "Testitiedostossa test_tuonti.py on kolme testiä omilla viesteilläsi, ja issuessa on rasti kohdassa Testi kirjoitettu.",
+          "tallenna": "Testitiedosto tests/test_tuonti.py omalla koneellasi. Se menee GitHubiin työvaiheessa Kirjaa tulos ja tallenna työ GitHubiin."
         },
         {
           "id": "43-14",
-          "teksti": "Toteuta tuonti Copilotin avulla",
-          "valmis": "Oman SVG:n polut näkyvät sovelluksessa, tiedostot tuonti.py ja ikkuna.py on tallennettu, ja issuen rivi 3b on rastitettu.",
-          "tallenna": "Tiedostot vektoripaja/tuonti.py ja vektoripaja/ikkuna.py omalla koneellasi. Ne menevät GitHubiin työvaiheessa Raportoi ja kirjaa tuonnin kortti."
+          "teksti": "Pyydä Copilotia tekemään tuonti",
+          "valmis": "Oma piirroksesi avautuu sovelluksessa, tiedostot tuonti.py ja ikkuna.py on tallennettu, ja issuessa on rasti kohdassa Toteutettu.",
+          "tallenna": "Tiedostot vektoripaja/tuonti.py ja vektoripaja/ikkuna.py omalla koneellasi. Ne menevät GitHubiin työvaiheessa Kirjaa tulos ja tallenna työ GitHubiin."
         },
         {
           "id": "43-8",
-          "teksti": "Tarkista SVG-tuonti",
-          "valmis": "Testit 3–5 menevät läpi, testien ja tarkistuksen tulokset ovat issuessa, ja issuen rivi 4 Tarkistettu on rastitettu.",
-          "tallenna": "Testien 3–5 tulokset ja tarkistuksen kommentti tuonnin kortin issueen."
+          "teksti": "Tarkista, että tuonti toimii",
+          "valmis": "Testit menevät läpi, olet kokeillut sovellusta itse, ja tarkistuksen tulos on tuonnin kortin issuessa.",
+          "tallenna": "Tarkistuksen kommentti tuonnin kortin issueen."
         },
         {
           "id": "43-16",
-          "teksti": "Raportoi ja kirjaa tuonnin kortti",
-          "valmis": "Tilatiedosto on päivitetty, project-docs/AI-loki/ai-loki.md merkintä on tiedostossa project-docs/AI-loki/ai-loki.md, tuonnin koodi ja testit ovat GitHubissa, ja kortin issue on suljettu.",
+          "teksti": "Kirjaa tulos ja tallenna työ GitHubiin",
+          "valmis": "Tilatiedosto on päivitetty, project-docs/AI-loki/ai-loki.md merkintä on tallessa, työ on GitHubissa, ja tuonnin kortin issue on suljettu.",
           "tallenna": "Tuonnin koodi, testit, PROJEKTIN-TILA.md ja project-docs/AI-loki/ai-loki.md GitHubissa."
         },
         {
           "id": "43-9",
-          "teksti": "Kokeile SVG-kirjaston rajoitteita",
-          "valmis": "Tiedosto rajoitteet.svg on kansiossa Testiaineisto, ja olet kokeillut sen Vektoripajassa. Paperilla on havainnot suorakulmiosta ja tekstistä.",
-          "tallenna": "Kokeilutiedosto Testiaineisto/rajoitteet.svg menee GitHubiin työvaiheessa Kirjaa SVG-kirjaston rajoitteet. Havainnot ovat paperilla."
+          "teksti": "Kokeile, mitä SVG-kirjasto ei osaa",
+          "valmis": "Olet kokeillut suorakulmiota ja tekstiä Vektoripajassa, ja havainnot ovat paperilla.",
+          "tallenna": "Kokeilutiedosto Testiaineisto/rajoitteet.svg omalla koneellasi. Se menee GitHubiin työvaiheessa Kirjaa kirjaston rajoitteet."
         },
         {
           "id": "43-5",
-          "teksti": "Kirjaa SVG-kirjaston rajoitteet",
-          "valmis": "Kaksi itse kokeiltua rajoitetta on kirjattu, ja ne ovat GitHubissa.",
+          "teksti": "Kirjaa kirjaston rajoitteet",
+          "valmis": "Kaksi itse kokeiltua rajoitetta on tiedostossa project-docs/kirjastot.md GitHubissa.",
           "tallenna": "Rajoitteet tiedostossa project-docs/kirjastot.md ja kokeilutiedosto Testiaineisto/rajoitteet.svg GitHubissa."
         },
         {
           "id": "43-11",
           "teksti": "Kirjaa kirjastojen lisenssit README:hen",
-          "valmis": "README:ssä ovat kirjastot versioineen ja lisensseineen.",
-          "tallenna": "Kirjastot ja lisenssit tiedostossa README.md GitHubissa."
+          "valmis": "README:ssä ovat kirjastot versioineen ja lisensseineen GitHubissa.",
+          "tallenna": "Kirjastolista tiedostossa README.md GitHubissa."
         },
         {
           "id": "43-6",
-          "teksti": "Julkaise SVG-tuonti",
-          "valmis": "Release v0.0.43 on GitHubissa, ja Actions-ajo on vihreä.",
-          "tallenna": "Release v0.0.43 GitHubiin."
+          "teksti": "Julkaise viikon versio",
+          "valmis": "Versio v0.0.43 on GitHubin Releases-sivulla, ja julkaisuajo on vihreä.",
+          "tallenna": "Release v0.0.43 GitHubissa."
         }
       ],
       "nayta": "oma SVG-tiedosto, testit 3–5 tuonnin kortin issuessa, project-docs/kirjastot.md ja release v0.0.43.",
@@ -1337,7 +1337,7 @@
           "tallenna": "Release v0.0.45 GitHubiin."
         }
       ],
-      "nayta": "rajapinta project-docs/suunnitelma.md, testit 6–8 ja maailmamuunnoksen lisätesti hierarkian kortin issuessa, hierarkiapaneeli releasessa v0.0.45 ja valinnan päätös project-docs/suunnitelma.md.",
+      "nayta": "rajapinta project-docs/Rajapinnat/Hierarkian_muunnos.md, testit 6–8 ja maailmamuunnoksen lisätesti hierarkian kortin issuessa, hierarkiapaneeli releasessa v0.0.45 ja valinnan päätös project-docs/suunnitelma.md.",
       "tuotos": "Muunnoksen rajapinta ja testit 6–8 · muunnos puhtaana funktiona · maailmamuunnos ja sen lisätesti · hierarkiapaneeli · valinnan toiminta suunnitelmassa · revolven valintatapojen vertailu · viikon release.",
       "valmis": "Oman tiedostosi kolme sisäkkäistä ryhmää näkyvät paneelissa sisennettyinä: layer Vartalo ja sen sisällä ryhmät Pää ja Korvat. Testit 6–8 ja maailmamuunnoksen lisätesti menevät läpi. Tiedostossa project-docs/suunnitelma.md on valinnan toiminta perusteluineen.",
       "tarkistukset": [
@@ -1666,7 +1666,7 @@
           "tallenna": "Release v0.0.50 GitHubiin."
         }
       ],
-      "nayta": "pivotin syötteen tarkistuksen rajapinta project-docs/suunnitelma.md:ssä, testit 16–18 issueissa ja pivotin kentät releasessa v0.0.50.",
+      "nayta": "pivotin syötteen tarkistuksen rajapinta project-docs/Rajapinnat/Pivotin_tarkistus.md, testit 16–18 issueissa ja pivotin kentät releasessa v0.0.50.",
       "tuotos": "Pivotin syötteen tarkistuksen rajapinta · testit 16–18 · pivot · pivotin prosenttikentät transformipaneelissa · viikon release.",
       "valmis": "Pivot 50/50/50 on keskipisteessä, prosentit muuttavat pivotin paikkaa, virheellinen syöte käsitellään kriteerisi mukaan, ja testit 16–18 menevät läpi.",
       "tarkistukset": [

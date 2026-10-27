@@ -938,7 +938,9 @@ if (linksOn) {
 
     /* project-docs-tiedostoilla tiedostokortti */
     const polut = Object.values(cards).map((c) => String(c.polku || ""));
-    const katettu = (p) => polut.some((q) => q === p || q.startsWith(`${p.replace(/\/$/, "")}/`) || (q.endsWith("/") && (p.startsWith(q) || `${p}/` === q)));
+    const kansio = (x) => x.replace(/\/[^/]*$/, "/");
+    /* Kortin tiedoston kanssa samassa kansiossa oleva tiedosto (esim. AI-loki/ai-loki-vko-6.md) kuuluu samaan korttiin. */
+    const katettu = (p) => polut.some((q) => q === p || q.startsWith(`${p.replace(/\/$/, "")}/`) || (q.endsWith("/") && (p.startsWith(q) || `${p}/` === q)) || (!q.endsWith("/") && q.split("/").length > 2 && kansio(q) === kansio(p)));
     const mainitut = new Set();
     [...items.map((it) => it.teksti), htmlNoComments].forEach((s) => (String(s).match(/project-docs\/(?:[\wÅÄÖåäö-]+\/)*[\wÅÄÖåäö-]+(?:\.\w+)?\/?/g) || []).forEach((m) => mainitut.add(m)));
     [...mainitut].filter((m) => !/^project-docs\/?$/.test(m)).forEach((m) => { if (!katettu(m)) { err(`${m}: project-docs-tiedostolta puuttuu tiedostokortti`); tiukat++; } });
