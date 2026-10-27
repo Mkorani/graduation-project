@@ -17,10 +17,10 @@
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
-  <link rel="stylesheet" href="styles.css?v2.8.4-20261027b">
-  <script src="sisalto.js?v2.8.4-20261027b" defer></script>
-  <script src="kuvakaappaukset.js?v2.8.4-20261027b" defer></script>
-  <script src="app.js?v2.8.4-20261027b" defer></script>
+  <link rel="stylesheet" href="styles.css?v2.8.4-20261027c">
+  <script src="sisalto.js?v2.8.4-20261027c" defer></script>
+  <script src="kuvakaappaukset.js?v2.8.4-20261027c" defer></script>
+  <script src="app.js?v2.8.4-20261027c" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#sisalto">Siirry sisältöön</a>
@@ -528,20 +528,23 @@
 <nav class="project-phase-path" aria-label="Projektin vaiheet"><a href="#week-40" data-open-week="40">1. Valmistelu</a><a href="#week-43" data-open-week="43" aria-current="step">2. 3D-malli</a><a href="#week-50" data-open-week="50">3. Kokeiltava versio</a><a href="#week-5" data-open-week="5">4. Parannukset</a><a href="#week-10" data-open-week="10">5. Julkaisu ja näyttö</a></nav>
           <section class="card project-connection" aria-labelledby="week-45-project-connection">
             <h2 class="section-label" id="week-45-project-connection">Miten tämän viikon asiat liittyvät kokonaisprojektiin</h2>
-            <p>Piirroksen layerit ja ryhmät kertovat, mistä osista malli koostuu ja mitkä osat kuuluvat yhteen. Tällä viikolla säilytät tämän rakenteen Vektoripajassa, jotta käyttäjä voi käsitellä mallia osina. Sama rakenne tarvitaan myöhemmin osien siirtämiseen ja vientiin Blenderiin.</p>
+            <p>Piirroksen ryhmät kertovat, mitkä osat kuuluvat yhteen. Tällä jaksolla ryhmistä tulee sovelluksessa mallin osia, jotka näkyvät hierarkiapaneelissa, ja GitHub Copilotin agentti kirjoittaa koodin ensimmäistä kertaa. Jakso kestää kaksi kalenteriviikkoa. Viikolla 45 (2.–6.11.) teet työvaiheet 1–5: 1. palaverissa 2.–3.11. sovit hierarkian kortista. Viikolla 46 (9.–13.11.) teet työvaiheet 6–9: 2. palaverissa 9.–10.11. näytät hierarkiapaneelin ja tarkistuksen kommentin. Jakson kirjaus kirjoitetaan perjantaina 13.11.</p>
             <h2 class="section-label project-week-goal">Viikon tavoite</h2>
             <p>Piirroksen layerit ja ryhmät näkyvät mallin nimettyinä osina.</p>
           </section>
 
           <section class="view-section">
-            <div class="section-heading-row"><h2>Viikon työvaiheet</h2><span class="week-status" data-week-status>0 / 6</span></div>
+            <div class="section-heading-row"><h2>Viikon työvaiheet</h2><span class="week-status" data-week-status>0 / 9</span></div>
             <div class="task-list">
-            <label class="task-row"><input type="checkbox" data-task="45-1"><span class="task-box" aria-hidden="true"></span><span class="task-text">Määrittele osien rakenteen rajapinta ja testit</span></label>
+            <label class="task-row"><input type="checkbox" data-task="45-1"><span class="task-box" aria-hidden="true"></span><span class="task-text">Määrittele, mitä piirroksen ryhmistä tulee</span></label>
             <label class="task-row"><input type="checkbox" data-task="45-2"><span class="task-box" aria-hidden="true"></span><span class="task-text">Suunnittele osien hierarkian kortti</span></label>
-            <label class="task-row"><input type="checkbox" data-task="45-6"><span class="task-box" aria-hidden="true"></span><span class="task-text">Rakenna osien hierarkia</span></label>
-            <label class="task-row"><input type="checkbox" data-task="45-3"><span class="task-box" aria-hidden="true"></span><span class="task-text">Päätä osan valinnan toiminta</span></label>
+            <label class="task-row"><input type="checkbox" data-task="45-7"><span class="task-box" aria-hidden="true"></span><span class="task-text">Kirjoita testit ennen koodia</span></label>
+            <label class="task-row"><input type="checkbox" data-task="45-6"><span class="task-box" aria-hidden="true"></span><span class="task-text">Pyydä agenttia tekemään osien hierarkia</span></label>
+            <label class="task-row"><input type="checkbox" data-task="45-8"><span class="task-box" aria-hidden="true"></span><span class="task-text">Tarkista, että osat näkyvät oikein</span></label>
+            <label class="task-row"><input type="checkbox" data-task="45-9"><span class="task-box" aria-hidden="true"></span><span class="task-text">Kirjaa tulos ja tallenna työ GitHubiin</span></label>
+            <label class="task-row"><input type="checkbox" data-task="45-3"><span class="task-box" aria-hidden="true"></span><span class="task-text">Päätä, mitä napsautus valitsee</span></label>
             <label class="task-row"><input type="checkbox" data-task="45-4"><span class="task-box" aria-hidden="true"></span><span class="task-text">Vertaa revolven valintatapoja</span></label>
-            <label class="task-row"><input type="checkbox" data-task="45-5"><span class="task-box" aria-hidden="true"></span><span class="task-text">Julkaise osien hierarkia</span></label>
+            <label class="task-row"><input type="checkbox" data-task="45-5"><span class="task-box" aria-hidden="true"></span><span class="task-text">Julkaise viikon versio</span></label>
             </div>
           </section>
 
@@ -550,16 +553,11 @@
             <nav class="resource-actions" data-week-resources hidden aria-label="Tämän viikon pohjat"></nav>
             <ol data-lesson-list></ol>
           </section>
-          <details class="view-section week-workflow">
-            <summary>Työsykli GitHub-issuen tekemiseen</summary>
-            <p>Käytä tätä, kun tehtäväkortti pyytää toteuttamaan muutoksen työsyklillä. Yksi kierros on yksi GitHub-issue.</p>
-            <section data-week-cycle hidden></section>
-          </details>
 
           <section class="card view-section week-finish">
             <h2>Viikon lopputarkistus</h2>
             <h3>Toiminta on tarkistettu, kun</h3><p class="checkpoint"></p>
-            <h3>Työnäyte talteen</h3><p class="evidence">rajapinta [[tiedosto:rajapinnat|`project-docs/Rajapinnat/Hierarkian_muunnos.md`]], testit 6–8 ja maailmamuunnoksen lisätesti hierarkian kortin issuessa, hierarkiapaneeli releasessa v0.0.45 ja valinnan päätös [[tiedosto:suunnitelma|suunnitelmassa]].</p>
+            <h3>Työnäyte talteen</h3><p class="evidence">rajapinta [[tiedosto:rajapinnat|`project-docs/Rajapinnat/Hierarkian_muunnos.md`]], testit 6–8 ja lisätesti tiedostossa `tests/test_hierarkia.py`, hierarkiapaneeli releasessa v0.0.45 sekä valinnan päätös ja revolven vertailu [[tiedosto:suunnitelma|suunnitelmassa]].</p>
           </section>
           <details class="view-section">
             <summary>Mitä osaamista viikon työ osoittaa?</summary>

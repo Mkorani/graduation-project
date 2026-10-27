@@ -1281,7 +1281,7 @@
     if (checkpoint) checkpoint.innerHTML = richText(guide.done || "");
 
     const record = card.querySelector("[data-journal-record]");
-    if (record) record.innerHTML = `<strong>${escapeText(t("journalRecordPrefix"))}</strong> ${richText(guide.record || "")}`;
+    if (record) record.innerHTML = `<strong>${escapeText(t("journalRecordPrefix"))}</strong> ${richText(guide.record || "").replace(/\n/g, "<br>")}`;
 
     /* v2.5: tehtäväkortit. Osatehtävät korvaavat Näin etenet -listan, jos viikolla ei ole
        steps-listaa; resurssilinkit ja viestipohjat siirtyvät silloin tehtävien yhteyteen. */
